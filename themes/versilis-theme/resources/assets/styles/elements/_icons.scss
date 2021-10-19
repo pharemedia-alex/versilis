@@ -1,0 +1,149 @@
+// ==========================================================================
+// Elements / Icons
+//
+// Simple default styles for Icons.
+//
+// ==========================================================================
+
+// ------------------ Icon wrapper colors ------------------
+@mixin icon-colors ($background-color:transparent, $color:$color-black, $border-color:$color-black) {
+  background-color: $background-color;
+  color: $color;
+  border-color: $border-color;
+}
+
+[class^="icon"] {
+  display: inline-block;
+  fill: currentColor; // inherit color of its context
+  height: 1em;
+  width: 1em;
+  vertical-align: middle;
+}
+
+.icon {
+  &--xs {
+    height: $icon-size-xs;
+    width: $icon-size-xs;
+  }
+
+  &--sm {
+    height: $icon-size-sm;
+    width: $icon-size-sm;
+  }
+
+  &--md {
+    height: $icon-size-md;
+    width: $icon-size-md;
+  }
+
+  &--lg {
+    height: $icon-size-lg;
+    width: $icon-size-lg;
+  }
+
+  &--xl {
+    height: $icon-size-xl;
+    width: $icon-size-xl;
+  }
+
+  &--xxl {
+    height: $icon-size-xxl;
+    width: $icon-size-xxl;
+  }
+
+  &--full-size {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/*
+.icon__wrapper {
+  @include icon-colors;
+
+  width: 40px;
+  height: 40px;
+  border-style: solid;
+  border-width: 2px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all $transition-normal ease;
+  border-radius: 50%;
+  outline: none;
+  opacity: 1;
+  z-index: 99;
+  cursor: pointer;
+
+  &.size--xs {
+    height: calc(#{$icon-size-xs} + 20px);
+    width: calc(#{$icon-size-xs} + 20px);
+
+    @include media-breakpoint-up(lg) {
+      height: rem-calc(#{$icon-size-lg} + 20px);
+      width: rem-calc(#{$icon-size-lg} + 20px);
+    }
+  }
+
+  &.size--sm {
+    height: calc(#{$icon-size-sm} + 20px);
+    width: calc(#{$icon-size-sm} + 20px);
+
+    @include media-breakpoint-up(lg) {
+      height: rem-calc(#{$icon-size-lg} + 20px);
+      width: rem-calc(#{$icon-size-lg} + 20px);
+    }
+  }
+
+  &.size--md {
+    height: calc(#{$icon-size-md} + 20px);
+    width: calc(#{$icon-size-md} + 20px);
+
+    @include media-breakpoint-up(lg) {
+      height: rem-calc(#{$icon-size-lg} + 20px);
+      width: rem-calc(#{$icon-size-lg} + 20px);
+    }
+  }
+
+  &.size--lg {
+    height: calc(#{$icon-size-lg} + 20px);
+    width: calc(#{$icon-size-lg} + 20px);
+  }
+
+  &.size--xl {
+    height: calc(#{$icon-size-xl} + 20px);
+    width: calc(#{$icon-size-xl} + 20px);
+  }
+
+  &.size--xxl {
+    height: calc(#{$icon-size-xxl} + 20px);
+    width: calc(#{$icon-size-xxl} + 20px);
+  }
+
+  // @include u-all-state {
+  &:hover,
+  &:active {
+    @include icon-colors($color-black, $color-secondary, $color-black);
+
+    outline: none;
+    opacity: 1;
+  }
+
+  // ------------------ swipper nav disabled ------------------
+  &.swiper-button-disabled {
+    opacity: 0.35;
+    cursor: auto;
+    pointer-events: none;
+    color: $color-light-grey; // color the arrow in light grey when nav disabled
+  }
+}
+
+*/
+
+// ------------------ Rotation arrow nav prev ------------------
+.nav-icon {
+  &__prev {
+    transform-origin: center;
+    transform: rotate(180deg);
+  }
+}

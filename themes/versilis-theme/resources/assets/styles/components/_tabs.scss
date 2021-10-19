@@ -1,0 +1,41 @@
+// ==========================================================================
+// Components / faq
+//
+// ==========================================================================
+
+.tab-group {
+  position: relative;
+
+  .tab { //issue with video in hidden container (display: none;) thumbnail low quality by default
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+
+    &.is-active {
+      position: relative;
+      visibility: visible;
+    }
+  }
+
+  .tab-nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    @include u-all-state {
+      cursor: pointer;
+    }
+
+    a {
+      opacity: 0.6;
+
+      &.current {
+        opacity: 1;
+      }
+    }
+  }
+}

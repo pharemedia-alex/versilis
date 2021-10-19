@@ -1,0 +1,138 @@
+// ==========================================================================
+// Components / content-flexible / text_images
+
+// ==========================================================================
+
+.cf-text-images {
+  .text-images {
+    @include media-breakpoint-up(xxxl) {
+      margin-left: auto;
+      margin-right: auto;
+      width: 82%;
+      max-width: $container-max-width;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    &__title {
+      margin-bottom: rem-calc($spacing-small/2);
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: $spacing-small;
+      }
+    }
+
+    &__element {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding-top: rem-calc($spacing-xlarge/2);
+
+      @include media-breakpoint-up(lg) {
+        padding-top: rem-calc($spacing-xlarge);
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .right-alignment {
+        margin: 0;
+
+        @include media-breakpoint-up(sm) {
+          margin: 0 5%;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          margin: 0 0 0 9%;
+        }
+
+        @include media-breakpoint-up(xxxl) {
+          margin: 0;
+        }
+      }
+
+      .left-alignment {
+        margin: 0;
+
+        @include media-breakpoint-up(sm) {
+          margin: 0 5%;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          margin: 0 9% 0 0;
+        }
+
+        @include media-breakpoint-up(xxxl) {
+          margin: 0;
+        }
+      }
+
+      @include media-breakpoint-up(xxxl) {
+        @include make-row();
+      }
+
+      .cf-highlight__btn {
+        margin-top: $spacing-small;
+      }
+    }
+
+    &__image {
+      width: calc(100% - 30px);
+
+      @include media-breakpoint-down(lg) {
+        &.order-lg-last {
+          margin-left: auto;
+        }
+      }
+
+      @include media-breakpoint-up(sm) {
+        width: calc(95% - 20px);
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: 50%;
+      }
+
+      @include media-breakpoint-up(xxxl) {
+        @include make-col-ready();
+        @include make-col(6);
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__text {
+      padding: 0 30px;
+
+      @include media-breakpoint-up(lg) {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 40%;
+        flex: 0 0 40%;
+        max-width: 40%;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 32%;
+        flex: 0 0 32%;
+        max-width: 32%;
+      }
+
+      @include media-breakpoint-up(xxxl) {
+        @include make-col-ready();
+        @include make-col(5);
+      }
+    }
+
+    .divider {
+      @include media-breakpoint-up(xxxl) {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+}

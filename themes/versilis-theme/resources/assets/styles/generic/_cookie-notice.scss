@@ -1,0 +1,91 @@
+// ==========================================================================
+// Generic / cookie notice
+//
+// ==========================================================================
+
+.cookie-notice {
+  position: fixed;
+  min-width: 100%;
+  z-index: 100000;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 20px;
+  transition: height $transition-normal $ease-out-expo, padding $transition-normal $ease-out-expo;
+  display: none;
+
+  &.active {
+    display: block;
+    height: auto;
+  }
+
+  &__container {
+    background-color: $color-white;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px -1px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    color: $color-primary;
+
+    @extend %o-container;
+    @extend p;
+
+    @include media-breakpoint-down(lg) {
+      padding-right: 60px !important;
+    }
+  }
+
+  .text-container {
+    margin: 1rem 0;
+    display: inline-block;
+
+    a {
+      position: relative;
+      color: $color-primary;
+      text-decoration: underline;
+      opacity: 1;
+      transition: opacity $transition-normal $ease-out-expo;
+
+      @include u-all-state {
+        color: $color-primary;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .close-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -10px;
+    width: 15px;
+    height: 15px;
+    padding: 10px;
+    outline: 0;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 15px;
+      width: 2px;
+      top: 3px;
+      background-color: $color-primary;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 15px;
+      width: 2px;
+      top: 3px;
+      background-color: $color-primary;
+      transform: rotate(-45deg);
+    }
+  }
+}

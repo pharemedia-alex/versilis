@@ -1,0 +1,35 @@
+// ==========================================================================
+// Tools / mixins
+//
+// helpers mixins
+//
+// ==========================================================================
+
+/// Adds a browser prefix to the property
+/// @param {*} $property Property
+/// @param {*} $value Value
+
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -khtml-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+/// return a value without unit
+/// @param {*} $value Value
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+/// return a value in rem
+/// @param {px} $value Size
+
+@function rem-calc($size) {
+  $remSize: $size / $root-font-size;
+
+  @return #{$remSize}rem;
+}

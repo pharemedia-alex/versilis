@@ -1,0 +1,140 @@
+// ==========================================================================
+// Objects / container
+//
+// Page-level constraining and wrapping elements.
+//
+// > In programming languages the word *container* is generally used for structures
+// that can contain more than one element.
+// > A *wrapper* instead is something that wraps around a single object to provide
+// more functionalities and interfaces to it.
+// @link http://stackoverflow.com/a/13202141/140357
+//
+// based on how bootstrap works, container currently have a max-width and margin (all in %)
+// possible to define px but not recommended for responsive design purpose
+// aim is to transfer that to wrapper when grid will be developed!
+//
+// to define: variables for padding and width
+//
+// ==========================================================================
+
+@if (type-of($container-max-width) != number) {
+  @error "`#{$container-max-width}` needs to be a number.";
+}
+
+.o-main-container {
+  position: relative;
+  min-height: 100%;
+  background-position: top left;
+  background-size: cover;
+}
+
+//transform values into variables and maybe a mixins
+%o-container {
+  @include container-fixed;
+
+  //margin-left: 1%;
+  //margin-right: 1%;
+  width: 100%;
+  padding: 0 30px;
+
+  @include media-breakpoint-up(sm) {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    max-width: $container-max-width; // transform into var
+  }
+
+  @include media-breakpoint-up(xxl) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 82%;
+  }
+}
+
+.o-container {
+  @extend %o-container;
+}
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+
+.o-container-fluid {
+  @include container-fixed;
+}
+
+//automatiser la création de ces classes
+.o-container,
+.o-container-fluid {
+
+  //Class starting with .-- will be automatically linted to ./--, -- throw an error in sass except if nested with &
+  &[class*="--pt-sm"] {
+    padding-top: rem-calc($spacing-small / 2); // transform into variable
+
+    @include media-breakpoint-up(lg) {
+      padding-top: rem-calc($spacing-small);
+    }
+  }
+
+  &[class*="--pb-sm"] {
+    padding-bottom: rem-calc($spacing-small / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-bottom: rem-calc($spacing-small);
+    }
+  }
+
+  &[class*="--pt-md"] {
+    padding-top: rem-calc($spacing-medium / 2); // transform into variable
+
+    @include media-breakpoint-up(lg) {
+      padding-top: rem-calc($spacing-medium);
+    }
+  }
+
+  &[class*="--pb-md"] {
+    padding-bottom: rem-calc($spacing-medium / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-bottom: rem-calc($spacing-medium);
+    }
+  }
+
+  &[class*="--pt-lg"] {
+    padding-top: rem-calc($spacing-large / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-top: rem-calc($spacing-large);
+    }
+  }
+
+  &[class*="--pb-lg"] {
+    padding-bottom: rem-calc($spacing-large / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-bottom: rem-calc($spacing-large);
+    }
+  }
+
+  &[class*="--pt-xl"] {
+    padding-top: rem-calc($spacing-xlarge / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-top: rem-calc($spacing-xlarge);
+    }
+  }
+
+  &[class*="--pb-xl"] {
+    padding-bottom: rem-calc($spacing-xlarge / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-bottom: rem-calc($spacing-xlarge);
+    }
+  }
+
+  // print
+  @media print {
+    min-width: 992px !important;
+  }
+}

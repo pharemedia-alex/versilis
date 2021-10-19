@@ -1,0 +1,60 @@
+// ==========================================================================
+// Tools / link
+//
+// mixins to manage several states at the same time
+//
+// [link] https://css-tricks.com/css-basics-styling-links-like-boss/
+//
+// ==========================================================================
+
+/// generate all link states :hover, :active, :focus in one go.
+/// @param {*} $property Property
+/// @param {*} $value Value
+/// use
+
+/*
+a {
+  @include u-all-state {
+    decoration: underline;
+    color: $color-secondary;
+  }
+}
+*/
+
+@mixin u-all-state {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+/// same as all-state but for :focus and :hover only
+
+@mixin u-hocus {
+  &:focus,
+  &:hover {
+    @content;
+  }
+}
+
+/// same as all-state but for :focus and :active only
+
+@mixin u-actus {
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+//
+// Set the color of the highlight that appears over a link while it's being tapped.
+//
+// By default, the highlight is suppressed.
+//
+// @param  {Color} $value [rgba(0, 0, 0, 0)] - The value of the highlight.
+// @output `-webkit-tap-highlight-color`
+//
+@mixin tap-highlight-color($value: rgba(0, 0, 0, 0)) {
+  -webkit-tap-highlight-color: $value;
+}

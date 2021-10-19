@@ -1,0 +1,182 @@
+// ==========================================================================
+// Objects / color-theme
+//
+// could be used for any project based on several color themes
+// use colors defined in settings
+// specific settings used for this project 
+// (color map related to predefined colors used in backend options - archive cpt)
+//
+// ==========================================================================
+
+/* Header theme */
+
+%o-theme-header-dark {
+  .header {
+    color: $color-white;
+
+    .brand {
+      #logo-white {
+        display: block;
+      }
+
+      #logo-color {
+        display: none;
+      }
+    }
+
+    //link effect border
+    .nav-primary > ul > li {
+      &::after {
+        border-bottom-color: $color-white;
+      }
+    }
+
+    &__cta {
+      border: 2px solid $color-white;
+      color: $color-white;
+      background-color: transparent;
+
+      @include u-all-state {
+        color: $color-primary;
+        background-color: $color-white;
+      }
+    }
+  }
+
+  .page-header {
+    color: $color-white;
+
+    &.-img-bg {
+      color: $color-white;
+    }
+  }
+}
+
+%o-theme-header-light {
+  .header {
+    color: $color-primary;
+
+    .brand {
+      #logo-white {
+        display: none;
+      }
+
+      #logo-color {
+        display: block;
+      }
+    }
+
+    //link effect border
+    .nav-primary > ul > li {
+      &::after {
+        border-bottom-color: $color-primary;
+      }
+    }
+
+    &__cta {
+      border: 2px solid $color-primary;
+      background-color: transparent;
+      color: $color-primary;
+
+      @include u-all-state {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+    }
+
+    .nav-toggle {
+      .bar {
+        background-color: $color-primary;
+      }
+    }
+
+    &.inverted {
+      color: $color-white;
+
+      .brand {
+        #logo-white {
+          display: block;
+        }
+
+        #logo-color {
+          display: none;
+        }
+      }
+
+      //link effect border
+      .nav-primary > ul > li {
+        &::after {
+          border-bottom-color: $color-white;
+        }
+      }
+
+      .header__cta {
+        border: 2px solid $color-white;
+        background-color: transparent;
+        color: $color-white;
+
+        @include u-all-state {
+          border-color: $color-white;
+          background-color: $color-white;
+          color: $color-primary;
+        }
+      }
+    }
+  }
+
+  .page-header {
+    color: $color-primary;
+  }
+}
+
+.o-theme-header-light {
+  @extend %o-theme-header-light;
+}
+
+.o-theme-header-dark {
+  @extend %o-theme-header-dark;
+}
+
+// used by CF modules
+.lg-bg {
+  background-color: $color-light-green;
+}
+
+.lb-bg {
+  background-color: none;
+}
+
+.dg-bg {
+  background-color: $color-primary;
+}
+
+/*
+  available theme and placeholder to use in the components and content-flexible sections - defined in settings > colors
+  %o-theme-light-green, .o-theme-dark-green
+  %o-theme-dark-green, .o-theme-dark-green
+*/
+
+@if $color-themes != null {
+  @each $theme in $color-themes {
+    //Placeholder for reusability
+    %o-theme-#{nth($theme,1)} {
+      background: #{nth($theme, 2)};
+      color: #{nth($theme, 3)};
+
+      .btn {
+        border: 2px solid #{nth($theme, 3)};
+        background-color: transparent;
+        color: #{nth($theme, 3)};
+
+        @include u-all-state {
+          background-color: #{nth($theme, 3)};
+          color: #{nth($theme, 2)};
+        }
+      }
+    }
+    //Theme
+    .o-theme-#{nth($theme,1)} {
+      @extend %o-theme-#{nth($theme,1)};
+    }
+  }
+}

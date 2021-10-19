@@ -1,0 +1,21 @@
+// ==========================================================================
+// Tools / grid
+//
+// Based on Bootstrap mixins - do not change for now as we use the gutter variables
+// from Bootstrap
+// [link] https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_grid.scss
+//
+// ==========================================================================
+
+@mixin container-fixed($gutter: $grid-gutter-width) {
+  padding-right: ceil(($gutter / 2));
+  padding-left: floor(($gutter / 2));
+  margin-right: 0;
+  margin-left: 0;
+
+  /*
+  width: 100%;
+  */
+
+  @include clearfix;
+}

@@ -1,0 +1,48 @@
+// ==========================================================================
+// Components / content-flexible / text_icon
+//
+// ==========================================================================
+
+.cf-text-icon {
+  position: relative;
+
+  h3 {
+    font-weight: 600;
+  }
+
+  .row .row {
+    height: 100%;
+  }
+
+  &__text {
+    p {
+      @include fluid-type($breakpoint-sm, $breakpoint-lg, 24px, 32px);
+
+      line-height: 1;
+    }
+  }
+
+  .col-icon {
+    &.col-lg-4 {
+      margin-bottom: rem-calc($spacing-small / 2);
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 0;
+      }
+    }
+
+    &.align-self-end {
+      margin: $spacing-medium 0;
+
+      @include media-breakpoint-up(lg) {
+        margin: 0;
+      }
+    }
+
+    &:not(.align-self-end) {
+      @include media-breakpoint-up(lg) {
+        text-align: right;
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+// ==========================================================================
+// Components / content-flexible / faq
+// 
+// ==========================================================================
+
+.cf-faq {
+  h2 {
+    text-align: center;
+  }
+
+  .toggle__element {
+    &-header {
+      border-top: 2px solid $color-secondary;
+
+      a {
+        @extend h3;
+
+        position: relative;
+        display: block;
+        padding: rem-calc(15px) rem-calc(20px) rem-calc(15px) 0;
+        font-weight: 500;
+        transition: color $transition-normal $ease-out-expo;
+        color: $color-primary;
+        margin-bottom: rem-calc(14px);
+
+        &::after {
+          border-style: solid;
+          border-width: 2px 2px 0 0;
+          border-color: $color-secondary;
+          content: "";
+          display: inline-block;
+          height: 10px;
+          right: 2px;
+          position: absolute;
+          vertical-align: top;
+          width: 10px;
+          top: 34%;
+          transform: rotate(135deg);
+          transition: all $transition-normal $ease-out-expo;
+        }
+
+        h3 {
+          font-weight: 500;
+        }
+
+        &.is-active {
+          color: $color-secondary;
+
+          &::after {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+
+    &-content {
+      box-sizing: border-box;
+      display: none;
+      transition-property: height;
+      transition-timing-function: $ease-out-expo;
+      overflow: hidden;
+    }
+  }
+}

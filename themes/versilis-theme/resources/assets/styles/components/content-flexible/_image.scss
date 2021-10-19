@@ -1,0 +1,22 @@
+// ==========================================================================
+// Components / content-flexible / image
+//
+// ==========================================================================
+
+.cf-image {
+  position: relative;
+
+  > div {
+    height: 55vw;
+    min-height: 280px;
+    max-height: 700px;
+
+    img {
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      -o-object-position: center;
+      object-position: center;
+    }
+  }
+}

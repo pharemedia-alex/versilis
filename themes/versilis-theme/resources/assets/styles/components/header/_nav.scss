@@ -1,0 +1,14 @@
+// ==========================================================================
+// Components / header / nav
+//
+// Shared styles for nav elements
+//
+// ==========================================================================
+
+.nav {
+  @include u-list-reset;
+
+  @include media-breakpoint-up(xl) {
+    @include u-list-inline;
+  }
+}

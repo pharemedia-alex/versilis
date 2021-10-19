@@ -1,0 +1,74 @@
+// ==========================================================================
+// Settings / typography
+//
+// fonts integration
+// root properties
+// global font-sizes
+//
+// ==========================================================================
+
+/*
+@include font-face(
+  "Saira Semi Condensed",
+  "Saira-semi-condensed", // file name only - path is managed by $font-path in settings > variables
+  200,
+  normal,
+  ttf woff woff2 otf
+);
+*/
+//Font imported with enqueue_style in app/setup.php
+
+$font-primary: "Open Sans", sans-serif;
+$font-secondary: "Roboto", sans-serif;
+
+// define root properties specific to the project
+$root-font-family: $font-primary;
+$root-line-height: 1.5;
+$root-font-size: 16px;
+
+$body-font-size: 16px;
+$body-font-size-min: 16px;
+$body-font-size-max: 18px;
+$font-size-xs: 14px;
+$font-size-sm: 16px;
+$body-line-height: 1.375;
+$body-font-color: $color-primary;
+
+// headings
+$font-size-h1: 64px;
+$font-size-h2: 48px;
+$font-size-h3: 24px;
+$font-size-h4: 20px;
+$font-size-h5: 16px;
+$font-size-h6: 14px;
+
+// headings max
+$font-size-h1-max: 64px;
+$font-size-h2-max: 48px;
+$font-size-h3-max: 24px;
+$font-size-h4-max: 18px;
+$font-size-h5-max: 16px;
+$font-size-h6-max: 14px;
+
+// headings min
+$font-size-h1-min: 48px;
+$font-size-h2-min: 28px;
+$font-size-h3-min: 24px;
+$font-size-h4-min: 16px;
+$font-size-h5-min: 16px;
+$font-size-h6-min: 14px;
+
+// menu
+$main-nav-font-size: 16px;
+$main-nav-line-height: 1.25;
+
+$mobile-nav-font-size: 36px;
+$mobile-nav-line-height: 44px;
+
+// links
+$link-color: $color-primary;
+
+// buttons
+$button-font-size-min: 14px;
+$button-font-size-max: 16px;
+$button-line-height: 1.31;

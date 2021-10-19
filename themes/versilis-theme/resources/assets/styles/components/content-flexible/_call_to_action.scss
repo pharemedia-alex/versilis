@@ -1,0 +1,54 @@
+// ==========================================================================
+// Components / content-flexible / call-to-action
+//
+// ==========================================================================
+
+.cf-cta {
+  position: relative;
+  background: url("../images/cta_bg.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    color: $color-primary;
+    width: 100%;
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(6);
+    }
+  }
+
+  &__text {
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(6);
+    }
+  }
+
+  &__button {
+    margin-top: rem-calc($spacing-small);
+  }
+
+  .btn {
+    opacity: 1;
+    transition: all $transition-slow $ease-out-quart;
+    background-color: $color-primary;
+    color: $color-white;
+    border: 0;
+
+    &:hover,
+    &:active {
+      background-color: $color-blue-2;
+      color: $color-white;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+// ==========================================================================
+// Settings / transitions
+//
+// parameters for transitions
+//
+// ==========================================================================
+
+$transition-veryslow: 0.8s;
+$transition-slow: 0.6s;
+$transition-normal: 0.4s;
+$transition-fast: 0.2s;
+
+//more ease available @ https://easings.net/fr
+$ease-out-quad: cubic-bezier(0.165, 0.84, 0.44, 1);
+$ease-out-sin: cubic-bezier(0.39, 0.575, 0.565, 1);
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);

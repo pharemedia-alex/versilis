@@ -1,0 +1,66 @@
+// ==========================================================================
+// Elements / headings
+//
+// Simple default styles for headings 1 through 6.
+//
+// ==========================================================================
+
+/*
+* Choose between the appropriate responsive approach (mobile first):
+* - font-sizes defined by breakpoint, example:
+    h1, .h1 {
+        font-size: 1.5rem;
+
+        @include mq($breakpoint-small) {
+        font-size: 2.5rem;
+        }
+
+        @include mq($breakpoint-medium) {
+        font-size: 3.5rem;
+        }
+*
+* - fluid font-sizes calculated by fluid-type mixins:
+*   @include fluid-type($min-breakpoint, $max-breakpoint, $min-font-size, $max-font-size);
+
+    example:
+    h1, .h1 {
+        fluid-type($breakpoint-small, $breakpoint-xlarge, $min-font-size, $max-font-size);
+    }
+*
+*/
+
+h1,
+.h1 {
+  @include fluid-type($breakpoint-sm, $breakpoint-xl, $font-size-h1-min, $font-size-h1-max);
+}
+
+h2,
+.h2 {
+  @include fluid-type($breakpoint-sm, $breakpoint-xl, $font-size-h2-min, $font-size-h2-max);
+}
+
+h3,
+.h3 {
+  @include fluid-type($breakpoint-sm, $breakpoint-xl, $font-size-h3-min, $font-size-h3-max);
+}
+
+h4,
+.h4 {
+  @include fluid-type($breakpoint-sm, $breakpoint-xl, $font-size-h4-min, $font-size-h4-max);
+}
+
+h5,
+.h5 {
+  @include fluid-type($breakpoint-sm, $breakpoint-xl, $font-size-h5-min, $font-size-h5-max);
+}
+
+h6,
+.h6 {
+  @include fluid-type($breakpoint-sm, $breakpoint-xl, $font-size-h6-min, $font-size-h6-max);
+}
+
+p,
+.p {
+  @include fluid-type($breakpoint-sm, $breakpoint-xl, $body-font-size-min, $body-font-size-max);
+}
+

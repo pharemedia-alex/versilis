@@ -1,0 +1,40 @@
+// ==========================================================================
+// Tools / bootstrap
+//
+// Call only files that are needed based on bootstrap.scss structure
+//
+// ==========================================================================
+
+// Load main functions, some are used for breakpoints
+@import "~bootstrap/scss/functions";
+
+// Review variables or add them in settings on demand - verify how it works
+@import "~bootstrap/scss/variables";
+@import "../settings/grid.scss"; // Bootstrap grid settings modifier
+
+// mixins for grid
+@import "~bootstrap/scss/mixins/breakpoints";
+@import "~bootstrap/scss/mixins/grid-framework";
+@import "~bootstrap/scss/mixins/grid";
+
+//mixins
+@import "~bootstrap/scss/mixins/screen-reader";
+
+//reboot + required mixins
+@import "~bootstrap/scss/vendor/rfs";
+@import "~bootstrap/scss/mixins/hover";
+@import "~bootstrap/scss/mixins/clearfix";
+@import "~bootstrap/scss/utilities/clearfix";
+@import "~bootstrap/scss/reboot";
+
+// print
+@import "~bootstrap/scss/print";
+
+// utilities for grid
+@import "~bootstrap/scss/utilities/display";
+@import "~bootstrap/scss/utilities/flex";
+
+// utilities - general
+@import "~bootstrap/scss/utilities/align";
+@import "~bootstrap/scss/utilities/position";
+@import "~bootstrap/scss/utilities/screenreaders";

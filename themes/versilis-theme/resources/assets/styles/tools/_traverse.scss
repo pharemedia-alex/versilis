@@ -1,0 +1,65 @@
+// ==========================================================================
+// Tools / traverse
+//
+// stylesheet for traverse (intersection observer) lib
+//
+// ==========================================================================
+
+//class used when debug=true - show the rootMargin box and add border to element that should intersect
+.traverse-debug {
+  border: 8px solid #00ffc4;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+//import transition effects
+
+/*
+  defaults
+  ========================================================================== */
+
+$traverse-defaults-options: (
+  type: "slide-up",
+  distance: 20px,
+  speed: 1s,
+  ease: $ease-out-sin
+);
+
+/*
+   mixin
+   ========================================================================== */
+@mixin traverse-slide-up($selectors, $params: ()) {
+  $options: map-merge($traverse-defaults-options, $params);
+
+  $type: map-get($options, type);
+  $distance: map-get($options, speed);
+  $speed: map-get($options, speed);
+  $ease: map-get($options, ease);
+
+  %traverse-slide-up {
+    opacity: 0;
+    transition: $speed $ease;
+    transition-property: transform, opacity;
+    transform: translate3d(0, $distance, 0);
+
+    &[data-traverse*="-in-viewport"] {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .js {
+    @each $selector in $selectors {
+      #{$selector} {
+        @extend %traverse-slide-up;
+      }
+    }
+
+    [data-traverse*="#{$name}"] {
+      @extend %traverse-slide-up;
+    }
+  }
+}

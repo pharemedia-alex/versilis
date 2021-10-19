@@ -1,0 +1,17 @@
+// ==========================================================================
+// Components / content-flexible / subpages_list
+// 
+// ==========================================================================
+
+.cf-subpages-list {
+  position: relative;
+  background-color: $color-light-green;
+
+  a {
+    font-weight: 700;
+  }
+
+  .page-link {
+    padding: 10px 0;
+  }
+}

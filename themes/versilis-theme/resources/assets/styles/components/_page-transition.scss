@@ -1,0 +1,29 @@
+// ==========================================================================
+// Components / page transition
+//
+// based on mixins page-transitions from /tools
+// and JS component
+//
+// ==========================================================================
+
+@include page-transition(
+  ".p-trans",
+  $parameters: (
+    color: $color-primary,
+    direction: "vertical", //vertical or horizontal
+    orientation: "reverse", //normal or reverse
+    elements: 1,
+    effect: "opacity", //translate, opacity
+    effect-direction: "reverse", //normal or reverse
+    speed: 0.6s,
+    delay: 0, //0.2 delay used by stagger mixins to delay each element in transition
+    easeShow: $ease-out-expo, //https://easings.net/
+    easeHide: $ease-out-expo,
+  )
+);
+
+/*
+improvments :
+  - option to reverse entering and exiting animation
+  - option to get multiple layers intead of cutting one into pieces
+*/

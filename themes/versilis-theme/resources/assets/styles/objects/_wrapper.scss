@@ -1,0 +1,94 @@
+// ==========================================================================
+// Objects / wrapper
+//
+// equivalent of container from bootstrap
+// do not hesitate to adapt it to your project for reusable material through pages
+//
+// ==========================================================================
+
+.o-wrapper {
+  position: relative;
+  width: 100%;
+  // margin-top: rem-calc($spacing);
+
+  //automatiser la création de ces classes
+  &[class*="--pt"] {
+    padding-top: rem-calc($spacing / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-top: rem-calc($spacing);
+    }
+  }
+
+  &[class*="--pb"] {
+    padding-bottom: rem-calc($spacing / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-bottom: rem-calc($spacing);
+    }
+  }
+
+  &[class*="--pt-sm"] {
+    padding-top: rem-calc($spacing-small / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-top: rem-calc($spacing-small);
+    }
+  }
+
+  &[class*="--pb-sm"] {
+    padding-bottom: rem-calc($spacing-small / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-bottom: rem-calc($spacing-small);
+    }
+  }
+
+  &[class*="--pt-md"] {
+    padding-top: rem-calc($spacing-medium / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-top: rem-calc($spacing-medium);
+    }
+  }
+
+  &[class*="--pb-md"] {
+    padding-bottom: rem-calc($spacing-medium / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-bottom: rem-calc($spacing-medium);
+    }
+  }
+
+  &[class*="--pt-lg"] {
+    padding-top: rem-calc($spacing-large / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-top: rem-calc($spacing-large);
+    }
+  }
+
+  &[class*="--pb-lg"] {
+    padding-bottom: rem-calc($spacing-large / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-bottom: rem-calc($spacing-large);
+    }
+  }
+
+  &[class*="--pt-xl"] {
+    padding-top: rem-calc($spacing-xlarge / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-top: rem-calc($spacing-xlarge);
+    }
+  }
+
+  &[class*="--pb-xl"] {
+    padding-bottom: rem-calc($spacing-xlarge / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-bottom: rem-calc($spacing-xlarge);
+    }
+  }
+}

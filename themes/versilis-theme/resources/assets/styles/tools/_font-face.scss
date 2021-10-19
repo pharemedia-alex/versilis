@@ -1,0 +1,36 @@
+// ==========================================================================
+// Tools / font-face
+//
+// font-face declaration to import new fonts
+// review mixins, could be improved (extensions, multiple font-weights)
+// check for old type format for older browser IE < 9
+//
+// Inspired by https://medium.com/@DavidPollet/mes-mixins-sass-ec370e2bd6a0
+// Built from https://css-tricks.com/snippets/css/using-font-face/
+//
+// ==========================================================================
+
+@mixin font-face(
+  $font-name,
+  $font-filename, // path + file name. Ex : path/to/font/filename
+  $font-weight: 400,
+  $font-style: normal,
+  $font-file-types: woff woff2
+) {
+  @font-face {
+    $src: null;
+
+    @each $type in $font-file-types {
+      $src: append(
+        $src,
+        url("#{$fonts-path}#{$font-filename}.#{$type}") format("#{$type}"),
+        comma
+      );
+    }
+
+    font-family: $font-name;
+    font-style: $font-style;
+    font-weight: $font-weight;
+    src: $src;
+  }
+}

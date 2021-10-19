@@ -1,0 +1,59 @@
+// ==========================================================================
+// Elements / links
+//
+// Simple default styles for links
+//
+// ==========================================================================
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  opacity: 1;
+  transition: color $transition-normal ease, opacity $transition-normal ease;
+
+  @include u-all-state {
+    // color: $link-hover-color;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+@mixin link-effect-border($direction:"normal", $border-color:$color-primary) {
+  $initial-width: 0;
+  $effect-width: 0;
+
+  @if $direction == "normal" {
+    $initial-width: 0;
+    $effect-width: 100%;
+  }
+
+  @else {
+    $initial-width: 100%;
+    $effect-width: 0;
+  }
+
+  @include u-all-state {
+    // color: currentColor;
+    outline: none;
+    opacity: 1;
+    background-size: $effect-width 2px;
+  }
+
+  /*
+  &::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid $border-color;
+    padding-top: rem-calc(4px);
+    position: relative;
+    width: $initial-width;
+    transition: width $transition-slow $ease-out-expo;
+  }
+  */
+  padding-bottom: 3px;
+  background-image: linear-gradient($border-color, $border-color);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: $initial-width 2px;
+  transition: background-size $transition-normal $ease-out-expo;
+}

@@ -1,0 +1,201 @@
+// ==========================================================================
+// Components / header / nav primary
+//
+//
+// ==========================================================================
+
+.nav-primary {
+  display: block;
+
+  > ul > li {
+    position: relative;
+    overflow: hidden;
+    margin-right: rem-calc(32px);
+
+    ul {
+      display: none;
+    }
+
+    @include u-all-state {
+      outline: none;
+      font-weight: 700;
+      opacity: 1;
+
+      &::after {
+        transform: translateX(0);
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      border-bottom-color: $color-primary;
+      position: relative;
+      transition: transform $transition-slow $ease-out-expo;
+      width: 100%;
+      transform: translateX(-110%);
+    }
+
+    &.menu-item-language {
+      text-transform: uppercase;
+    }
+
+    &.current-menu-item,
+    &.is-hover {
+      &::after {
+        transform: translate(0);
+      }
+    }
+
+    a {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      &::after {
+        content: attr(data-text);
+        content: attr(data-text) / "";
+        height: 0;
+        visibility: hidden;
+        overflow: hidden;
+        user-select: none;
+        pointer-events: none;
+        font-weight: 700;
+
+        @media speech {
+          display: none;
+        }
+      }
+    }
+
+    &.is-hover {
+      a {
+        font-weight: 700;
+      }
+    }
+
+    &.mobile-only {
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+    }
+  }
+
+  .sub-menu-container {
+    display: block;
+    opacity: 0;
+    background-color: $color-white;
+    color: $color-primary;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding-top: rem-calc(120px);
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: opacity $transition-normal $ease-out-expo;
+
+    &.is-active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .sub-menu {
+      @extend %o-container;
+
+      padding: rem-calc(32px) 0 rem-calc(46px) 0;
+      transition: opacity $transition-normal $ease-out-expo;
+      opacity: 0;
+
+      &__wrapper {
+        width: 100%;
+        border-top: 1px solid $color-grey-2;
+      }
+
+      &.is-active {
+        opacity: 1;
+      }
+
+      &__intro {
+        font-family: $font-primary;
+        font-weight: 400;
+      }
+
+      .dropdown-menu {
+        a {
+          display: block;
+          position: relative;
+          overflow: hidden;
+        }
+
+        span {
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 14px;
+          color: #7f7f80;
+        }
+      }
+
+      /*
+      .dropdown-menu {
+        display: flex;
+        flex-direction: row;
+
+        .item {
+          overflow: hidden;
+          margin-bottom: rem-calc(60px);
+          padding-right: rem-calc(40px);
+
+          a {
+            display: block;
+            position: relative;
+            overflow: hidden;
+
+            div {
+              display: table;
+              font-size: rem-calc(16px);
+              color: $color-primary;
+              transform: translateX(-20px);
+              transition: transform $transition-normal $ease-out-expo;
+
+              span {
+                display: table-cell;
+              }
+
+              &::before {
+                //background-image: url("../images/arrow.svg");
+                display: table-cell;
+                background-repeat: no-repeat;
+                position: relative;
+                top: 3px;
+                content: "";
+                background-size: 16px 16px;
+                height: 16px;
+                width: 20px;
+              }
+            }
+
+            @include u-all-state {
+              div {
+                transform: translateX(0);
+              }
+            }
+          }
+
+          p {
+            margin-top: 4px;
+            font-size: 12px;
+            font-weight: 400;
+          }
+        }
+      }
+      */
+    }
+  }
+}

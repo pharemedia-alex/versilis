@@ -1,0 +1,18 @@
+// ==========================================================================
+// Tools / lists
+//
+// mixins for lists
+//
+// ==========================================================================
+
+@mixin u-list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin u-list-inline {
+  li {
+    display: inline-block;
+  }
+}

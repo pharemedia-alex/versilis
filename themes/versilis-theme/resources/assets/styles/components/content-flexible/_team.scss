@@ -1,0 +1,29 @@
+// ==========================================================================
+// Components / content-flexible / text_icon
+//
+// ==========================================================================
+
+.cf-team {
+  position: relative;
+
+  .member {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &__photo {
+      position: relative;
+      overflow: hidden;
+      padding-top: 136.75%;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        max-width: none;
+        width: auto;
+      }
+    }
+  }
+}

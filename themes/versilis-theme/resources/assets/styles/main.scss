@@ -1,0 +1,32 @@
+/** Import everything from autoload */
+@import "./autoload/**/*";
+
+/**
+ * Import npm dependencies
+ *
+ * Prefix your imports with `~` to grab from node_modules/
+ * @see https://github.com/webpack-contrib/sass-loader#imports
+ */
+// @import "~some-node-module";
+
+/** Import theme styles */
+@import "./settings/**/*.scss";
+@import "./tools/**/*.scss";
+@import "./generic/**/*.scss";
+@import "./elements/**/*.scss";
+@import "./objects/**/*.scss";
+@import "./components/**/*.scss";
+@import "./templates/**/*.scss";
+@import "./utilities/**/*.scss";
+@import "../../../node_modules/swiper/css/swiper.min.css";
+
+//@import "components/buttons";
+//import "components/comments";
+//@import "components/forms";
+//@import "components/wp-classes";
+//@import "layouts/header";
+//@import "layouts/sidebar";
+//@import "layouts/footer";
+//@import "layouts/pages";
+//@import "layouts/posts";
+//@import "layouts/tinymce";

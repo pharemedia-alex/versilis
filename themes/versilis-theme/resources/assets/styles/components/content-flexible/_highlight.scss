@@ -1,0 +1,19 @@
+// ==========================================================================
+// Components / content-flexible / highlight
+//
+// ==========================================================================
+
+.cf-highlight {
+  position: relative;
+
+  &__text {
+    color: $color-medium-carmine;
+
+    p {
+      @include fluid-type($breakpoint-sm, $breakpoint-lg, 32px, 44px);
+
+      line-height: 1;
+      font-weight: 400;
+    }
+  }
+}

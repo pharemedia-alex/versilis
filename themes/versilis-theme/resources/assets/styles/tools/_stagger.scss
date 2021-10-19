@@ -1,0 +1,22 @@
+// ==========================================================================
+// Tools / stagger
+//
+// mixins to delay animation on series of elements
+// @link [https://gist.github.com/vajkri/26a683702e02aa656023]
+// 1) Nr of children, that need to stagger
+// 2) Initial delay of animation / transition
+// 3) Delay between each child's animation / transition 
+// 4) Type of stagger. Default is "animation", also takes "transition"
+//
+// ==========================================================================
+
+@mixin stagger-delay($i, $initial-delay, $stagger-delay, $type: animation) {
+  @while $i > 0 {
+    &:nth-of-type(#{$i}) {
+      $delay: $initial-delay + $stagger-delay * $i;
+
+      #{$type}-delay: $delay+s;
+    }
+    $i: $i - 1;
+  }
+}

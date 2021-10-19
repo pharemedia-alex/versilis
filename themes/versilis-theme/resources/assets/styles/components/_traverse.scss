@@ -1,0 +1,33 @@
+// ==========================================================================
+// Components / traverse
+//
+// based on mixins traverse from /tools
+// and JS component
+//
+// call mixins to configure traverse (one or more listerners), match with class call
+// in JS files
+//
+// ==========================================================================
+
+/*
+@include traverse(
+  "[data-traverse]"
+);
+*/
+
+.js {
+  .-t-animate > *,
+  //.-t-menu > *,
+  [data-traverse*="slide-up"] {
+    opacity: 0;
+    transition: $transition-normal $ease-out-sin;
+    transition-property: opacity, transform;
+    //transition-delay: 0.2s;
+    transform: translateY(20px);
+
+    &[data-traverse="-in-viewport"] {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

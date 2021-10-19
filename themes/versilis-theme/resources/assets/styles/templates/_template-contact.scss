@@ -1,0 +1,311 @@
+// ==========================================================================
+// Templates / Contact
+// ==========================================================================
+
+.template-contact {
+  background-color: $color-primary;
+
+  .page-header {
+    padding-top: rem-calc(220px);
+    height: auto;
+    max-height: none;
+
+    &__bg-img {
+      img,
+      picture {
+        object-fit: cover;
+        object-position: top;
+      }
+
+      @include media-breakpoint-up(md) {
+        img,
+        picture {
+          object-fit: contain;
+          object-position: bottom;
+        }
+      }
+    }
+  }
+
+  // ------------------- Form ---------------------
+  .contact-form {
+    color: $color-light-green;
+
+    &__element {
+      font-size: 16px;
+    }
+
+    /*
+    p {
+      display: flex;
+      justify-content: center;
+    }
+    */
+
+    .o-wrapper {
+      margin-bottom: $spacing-small //20px pb o-wrapper + 40px margin = 60px
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select {
+      color: $color-white;
+      border-bottom: 1px solid $color-light-green;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      height: rem-calc(32px);
+      outline: none;
+
+      @include fluid-type($breakpoint-sm, $breakpoint-lg, $body-font-size-min, $body-font-size-max);
+    }
+
+    .form-mention {
+      padding-top: 0.5rem;
+
+      @include fluid-type($breakpoint-sm, $breakpoint-lg, $body-font-size-min, $body-font-size-max);
+    }
+
+    textarea {
+      border: 1px solid $color-light-green;
+      outline: none;
+      color: $color-white;
+
+      @include fluid-type($breakpoint-sm, $breakpoint-lg, $body-font-size-min, $body-font-size-max);
+    }
+
+    input[type=submit] {
+      @extend .btn;
+
+      background-color: $color-light-green;
+      color: $color-primary;
+      line-height: $button-line-height;
+      font-weight: 600;
+      border: 2px solid $color-light-green;
+      outline: none;
+
+      @include u-all-state {
+        background-color: transparent;
+        color: $color-light-green;
+      }
+    }
+
+    .form__btn {
+      text-align: center;
+    }
+
+    .wpcf7-not-valid-tip {
+      color: #ff9963;
+      font-size: 1rem;
+      font-weight: 400;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .wpcf7-not-valid {
+      border-bottom-color: #ff9963 !important;//#f55723 !important;
+    }
+
+    .wpcf7-response-output {
+      width: 100%;
+      margin: $spacing-small 0;
+      font-size: rem-calc(18px);
+      padding: 10px;
+      position: relative;
+      display: none;
+    }
+
+    .file-upload-wrapper {
+      position: relative;
+
+      input {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        margin: 0;
+        padding: 0;
+        display: block;
+        cursor: pointer;
+        width: 100%;
+      }
+    }
+
+    .file-upload-details {
+      font-weight: 400;
+      font-size: rem-calc(14px);
+    }
+
+    .file-upload-name {
+      color: $color-white;
+      display: none;
+      margin-left: rem-calc(20px);
+
+      &.active {
+        display: block;
+      }
+    }
+
+    .wpcf7-list-item {
+      position: relative;
+
+      [type="checkbox"]:not(:checked),
+      [type="checkbox"]:checked {
+        position: absolute;
+        left: -9999px;
+        visibility: hidden;
+      }
+
+      .wpcf7-list-item-label {
+        cursor: pointer;
+      }
+
+      .wpcf7-list-item-label::before {
+        top: 6px;
+        left: 1px;
+        width: 9px;
+        height: 14px;
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-right: 3px solid $color-primary;
+        border-bottom: 3px solid $color-primary;
+        -webkit-transform: rotateZ(37deg);
+        -o-transform: rotateZ(37deg);
+        transform: rotateZ(37deg);
+        -webkit-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+      }
+
+      .wpcf7-list-item-label::before,
+      .wpcf7-list-item-label::after {
+        content: "";
+        left: 0;
+        position: absolute;
+        transition: border 0.25s, background-color 0.25s, width 0.2s 0.1s, height 0.2s 0.1s, top 0.2s 0.1s, left 0.2s 0.1s;
+        z-index: 1;
+      }
+
+      [type="checkbox"]:not(:checked) + .wpcf7-list-item-label::before {
+        width: 0;
+        height: 0;
+        border: 3px solid transparent;
+        left: 6px;
+        top: 12px;
+        -webkit-transform: rotateZ(37deg);
+        transform: rotateZ(37deg);
+        -webkit-transform-origin: 20% 40%;
+        transform-origin: 100% 100%;
+      }
+
+      [type="checkbox"]:not(:checked) + .wpcf7-list-item-label::after {
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border: 2px solid $color-light-green;
+        top: 4px;
+        z-index: 0;
+      }
+
+      [type="checkbox"]:checked + .wpcf7-list-item-label::after {
+        top: 4px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid $color-light-green;
+        background-color: $color-light-green;
+        z-index: 0;
+      }
+    }
+
+    .consent {
+      .wpcf7-not-valid-tip {
+        padding-left: rem-calc(36px);
+      }
+    }
+
+    .wpcf7-acceptance {
+      color: $color-light-green;
+
+      label {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 0;
+        font-weight: 600;
+      }
+
+      .wpcf7-list-item {
+        margin-left: 0;
+      }
+
+      input {
+        margin-top: 4px;
+      }
+    }
+
+    .acceptance-mention {
+      padding-left: rem-calc(36px);
+      cursor: pointer;
+      display: inline-block;
+      text-align: left;
+      font-weight: 400;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -ms-user-select: none;
+
+      @include fluid-type($breakpoint-sm, $breakpoint-lg, $body-font-size-min, $body-font-size-max);
+
+      a {
+        color: $color-light-green;
+        text-decoration: underline;
+        opacity: 1;
+        transition: opacity $transition-normal $ease-out-expo;
+
+        @include u-all-state {
+          opacity: 0.6;
+        }
+      }
+    }
+
+    .wpcf7-radio {
+      margin-top: $spacing;
+
+      @include make-row();
+
+      .wpcf7-list-item {
+        margin: 0 0 0.5em 0;
+        padding-left: rem-calc($grid-gutter-width/2);
+        padding-right: rem-calc($grid-gutter-width/2);
+        font-size: rem-calc(18px);
+
+        @include make-col(12);
+
+        @include media-breakpoint-up(sm) {
+          @include make-col(6);
+        }
+
+        @include media-breakpoint-up(lg) {
+          @include make-col(4);
+        }
+      }
+    }
+
+    .invalid {
+      .wpcf7-response-output {
+        border: 1px solid #ff9963;
+        color: #ff9963;
+      }
+    }
+
+    .sent {
+      .wpcf7-response-output {
+        border: 2px solid green;
+      }
+    }
+  }
+}

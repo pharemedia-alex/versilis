@@ -1,0 +1,81 @@
+// ==========================================================================
+// Objects / content
+//
+// styles for content from wysiwyg (generic styles used by the client generally)
+// uses styles placeholders from typography component
+//
+// ==========================================================================
+
+.o-content {
+  @extend %content;
+
+  h1,
+  h2 {
+    margin-bottom: 32px;
+  }
+
+  a {
+    text-decoration: underline;
+    opacity: 1;
+    transition: opacity $transition-slow $ease-out-quart;
+
+    @include u-all-state {
+      opacity: 0.6;
+    }
+  }
+
+  b,
+  strong {
+    font-weight: 600;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      @include fluid-type($breakpoint-sm, $breakpoint-xl, $body-font-size-min, $body-font-size-max);
+
+      padding: 10px 15px 10px 50px;
+      position: relative;
+    }
+
+    li::before {
+      content: "\00002D";
+      color: $color-primary;
+      font-weight: 500;
+      left: 20px;
+      position: absolute;
+    }
+  }
+
+  ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: ordered-list;
+
+    li {
+      @include fluid-type($breakpoint-sm, $breakpoint-xl, $body-font-size-min, $body-font-size-max);
+
+      padding: 10px 15px 10px 50px;
+      position: relative;
+    }
+
+    li::before {
+      content: counter(ordered-list);
+      color: $color-primary;
+      counter-increment: ordered-list;
+      font-weight: 700;
+      left: 20px;
+      position: absolute;
+
+      @include fluid-type($breakpoint-sm, $breakpoint-xl, $body-font-size-min, $body-font-size-max);
+    }
+  }
+}
+
+%content {
+  @include fluid-type($breakpoint-sm, $breakpoint-xl, $body-font-size-min, $body-font-size-max);
+}

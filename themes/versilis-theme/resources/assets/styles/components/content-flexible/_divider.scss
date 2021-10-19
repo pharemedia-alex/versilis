@@ -1,0 +1,17 @@
+// ==========================================================================
+// Components / content-flexible / blog-post-list
+// ==========================================================================
+
+.divider {
+  position: relative;
+
+  @extend %o-container;
+
+  &::before {
+    content: "";
+    position: relative;
+    height: 2px;
+    width: 100%;
+    background-color: $color-light-green;
+  }
+}

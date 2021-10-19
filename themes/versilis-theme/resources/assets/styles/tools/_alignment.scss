@@ -1,0 +1,33 @@
+// ==========================================================================
+// Tools / alignment
+//
+// alignment mixins
+//
+// ==========================================================================
+
+//
+// Vertically-center the direct descendants of the current element.
+//
+// Centering is achieved by displaying children as inline-blocks. Any whitespace
+// between elements is nullified by redefining the font size of the container
+// and its children.
+//
+// @output `font-size`, `display`, `vertical-align`
+//
+
+@mixin vertical-center {
+  font-size: 0;
+
+  &::before {
+    display: inline-block;
+    height: 100%;
+    content: "";
+    vertical-align: middle;
+  }
+
+  > * {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1rem;
+  }
+}

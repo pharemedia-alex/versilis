@@ -1,0 +1,143 @@
+// ==========================================================================
+// Components / footer
+//
+// ==========================================================================
+
+.footer {
+  background-color: $color-grey-4;
+  color: $color-primary;
+
+  a {
+    color: $color-primary;
+  }
+
+  h4 {
+    font-size: 14px;
+    line-height: 1.27;
+    margin-bottom: rem-calc(25px);
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .row {
+    justify-content: space-between;
+  }
+
+  &-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .footer-col_content {
+    a {
+      text-decoration: underline;
+      opacity: 1;
+      transition: opacity $transition-slow $ease-out-quart;
+
+      @include u-all-state {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  // ------------------- Sub footer ---------------------
+  .sub-footer {
+    font-size: $font-size-xs;
+    font-family: $font-secondary;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+    a {
+      font-weight: 400;
+      border-bottom: 0;
+      opacity: 1;
+      text-decoration: none;
+      transition: opacity $transition-slow $ease-out-quart;
+
+      &:not(:first-child) {
+        margin-left: rem-calc(16px);
+      }
+
+      @include u-all-state {
+        text-decoration: none;
+        opacity: 0.6;
+      }
+    }
+
+    .copyright,
+    .links {
+      margin: rem-calc(16px) 0;
+    }
+
+    .copyright {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .links {
+      text-align: right;
+    }
+
+    .language-switcher {
+      text-transform: uppercase;
+      margin-left: 60px;
+    }
+  }
+
+  // ------------------- Menu ---------------------
+
+  .menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 14px;
+    margin-bottom: 3rem;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    > .menu-item {
+      font-weight: 700;
+      margin-bottom: rem-calc(30px);
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+      }
+
+      > a {
+        display: inline-block;
+        padding: 4px 0;
+        margin-bottom: 10px;
+
+        @include link-effect-border("normal", $color-white);
+      }
+
+      > .sub-menu {
+        li {
+          a {
+            display: block;
+            font-weight: 400;
+            padding: 7px 0;
+            opacity: 1;
+            text-decoration: none;
+            transition: opacity $transition-normal $ease-out-expo;
+
+            @include u-all-state {
+              text-decoration: none;
+              opacity: 0.6;
+            }
+          }
+        }
+      }
+    }
+  }
+}

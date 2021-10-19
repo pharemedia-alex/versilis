@@ -1,0 +1,20 @@
+// ==========================================================================
+// Tools / opacity
+//
+// mixins for opacity
+// @link [https://github.com/matthieua/sass-css3-mixins]
+//
+// ==========================================================================
+
+/// Opacity
+/// @param {Double} $opacity [0.5] - Opacity
+/// @require {mixin} css3-prefix
+
+@mixin opacity($opacity: 0.5) {
+  $opacityMultiplied: ($opacity * 100);
+
+  filter: alpha(opacity=$opacityMultiplied);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $opacityMultiplied + ")";
+
+  @include css3-prefix("opacity", $opacity);
+}

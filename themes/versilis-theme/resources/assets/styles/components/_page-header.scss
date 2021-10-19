@@ -1,0 +1,138 @@
+// ==========================================================================
+// Components / page header
+//
+// ==========================================================================
+
+.page-header {
+  position: relative;
+  padding-top: rem-calc(110px);
+  padding-bottom: rem-calc(80px);
+  min-height: 420px;
+  background: $color-primary;
+
+  @include media-breakpoint-up(md) {
+    max-height: 440px;
+    height: 38vw;
+  }
+
+  &::before {
+    content: "";
+    top: 0;
+    left: $grid-gutter-width;
+    width: 240px;
+    height: 700px;
+    position: absolute;
+    z-index: 10;
+    background: url("../images/arrow_header.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom left;
+  }
+
+  &__bg-img {
+    @include background-image-fit;
+
+    opacity: 0.2;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+
+    @include fluid-type($breakpoint-sm, $breakpoint-xxl, $font-size-h3-min, $font-size-h3-max);
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    position: relative;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: rem-calc(40px);
+    color: $color-white;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 0;
+      justify-content: center;
+    }
+
+    .row {
+      justify-content: center;
+    }
+
+    h1 {
+      margin: 0 auto;
+      color: $color-white;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.home {
+  .page-header {
+    min-height: 100vh;
+    max-height: none;
+    height: auto;
+    padding-top: rem-calc(150px);
+    padding-bottom: rem-calc(60px);
+
+    @include media-breakpoint-up(sm) {
+      min-height: 680px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      min-height: 100vh;
+      padding-top: rem-calc(300px);
+      padding-bottom: rem-calc(90px);
+    }
+
+    h1 {
+      padding-bottom: 50px;
+
+      @include media-breakpoint-up(lg) {
+        padding-bottom: 100px;
+      }
+    }
+
+    &__subtitle {
+      padding-bottom: 15px;
+
+      @extend h3;
+    }
+
+    &__content p {
+      @include fluid-type($breakpoint-sm, $breakpoint-xxl, $font-size-h3-min, $font-size-h3-max);
+
+      line-height: 1.25;
+      font-weight: 400;
+    }
+  }
+}
+
+.single-case-study {
+  .page-header {
+    .o-wrapper {
+      text-align: center;
+
+      > .case-study__prop {
+        margin: 0 rem-calc(16px);
+      }
+
+      .case-study__prop {
+        display: inline-block;
+
+        .icon {
+          width: 22px;
+          height: 22px;
+        }
+
+        span {
+          padding-left: 6px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

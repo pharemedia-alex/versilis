@@ -1,0 +1,20 @@
+// ==========================================================================
+// Objects / grid
+//
+// Grid from Bootstrap
+//
+// ==========================================================================
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+// grid
+@import "~bootstrap/scss/grid";

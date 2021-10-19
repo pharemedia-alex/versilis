@@ -1,0 +1,67 @@
+// ==========================================================================
+// Components / tiles
+//
+// ==========================================================================
+
+.tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  overflow: hidden; //define max height?
+  border-radius: 24px;
+  box-shadow: 0 1px 4px rgba(14, 31, 53, 0.12), 0 4px 8px rgba(14, 31, 53, 0.08);
+  padding: rem-calc(32px);
+  background-color: $color-white;
+  height: 100%;
+
+  &_featured {
+    max-height: 300px;
+  }
+
+  a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    color: $white;
+    text-decoration: none;
+  }
+
+  &__image {
+    background-color: $color-secondary;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+    img {
+      max-width: 200px;
+      max-height: 100%;
+    }
+  }
+
+  &__icon {
+    background-color: $color-secondary;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 145px;
+    flex-direction: column;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 1.5rem 2rem;
+  }
+
+  ul {
+    @extend %checkmark-list;
+  }
+}

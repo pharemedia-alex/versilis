@@ -1,0 +1,15 @@
+// ==========================================================================
+// Components / content-flexible / text_intro
+//
+// ==========================================================================
+
+.cf-text-2-cols {
+  position: relative;
+  color: $color-primary;
+
+  .col-12 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
