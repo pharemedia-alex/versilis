@@ -6,6 +6,7 @@ import MenuOverlay from '../components/menuOverlay.js';
 import mainMenu from '../components/mainMenu';
 import CookieNotice from '../components/cookieNotice.js';
 import deviceDetection from '../components/device_detect.js';
+import Swiper from 'swiper';
 
 export default {
   init() {
@@ -65,6 +66,44 @@ export default {
 
     if( document.querySelector('#cf-faq-accordion')!==null ) {
       this.toggle = new Accordion('#cf-faq-accordion', 'toggle-trigger', true);
+    }
+
+    if( document.querySelector('.case-studies-list')!==null ) {
+      let swiperWrapper = document.querySelector('.case-studies-slider__wrapper');
+      this.teamCarrousel = new Swiper(
+        swiperWrapper.querySelector('.swiper-container'),
+        {
+            speed: 500,
+            // ================== Navigation arrows ==================
+            navigation: {
+              nextEl: '.case-studies-list-nav__next',
+              prevEl: '.case-studies-list-nav__prev',
+            },
+            // breakpointsInverse: true,
+            slidesPerView: 1,
+            spaceBetween: 18,
+            breakpoints: {
+              576: {
+                slidesPerView: 1.5,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 2.5,
+                spaceBetween: 30,
+              },
+            },
+            pagination: {
+              el: '.case-studies__swiper-pagination',
+              clickable: true,
+            },
+            autoResize: true,
+            // Disable preloading of all images
+            preloadImages: false,
+            // Enable lazy loading
+            lazy: true,
+            // loop: true,
+        }
+      );
     }
 
     /*

@@ -1731,12 +1731,33 @@
                             "ui_off_text": ""
                         },
                         {
+                            "key": "field_61730fb257f47",
+                            "label": "Number of entries",
+                            "name": "entries_num",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 12,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": ""
+                        },
+                        {
                             "key": "field_6154c1b347d8a",
                             "label": "Filter by",
                             "name": "filter",
                             "type": "select",
                             "instructions": "",
-                            "required": 1,
+                            "required": 0,
                             "conditional_logic": [
                                 [
                                     {
@@ -1886,7 +1907,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Case studies",
+                            "default_value": "",
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
@@ -1963,5 +1984,5 @@
     ],
     "active": 1,
     "description": "Content blocks for flexible layout shared by all templates",
-    "modified": 1633358650
+    "modified": 1634930662
 }

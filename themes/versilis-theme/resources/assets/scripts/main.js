@@ -7,6 +7,7 @@ import './autoload/**/*'
 // import local dependencies
 import Router from './util/Router';
 import common from './routes/common';
+import templateCaseStudies from './routes/case_studies';
 import templateContact from './routes/contact';
 
 /** Populate Router instance with DOM routes */
@@ -15,6 +16,8 @@ const routes = new Router({
   common,
   // Contact Us page
   templateContact,
+  //case studies
+  templateCaseStudies,
 });
 
 // Load Events

@@ -44,11 +44,15 @@ class SingleCaseStudy extends Controller
 
   public function benefits() {
     $output = array(
-      'main_title'    => $this->acf_fields->benefits_main_title,
-      'boxes'    => $this->acf_fields->benefits_boxes,
+      'main_title'  => $this->acf_fields->benefits_main_title,
+      'boxes'       => $this->acf_fields->benefits_boxes,
     );
 
     return (object) $output;
+  }
+
+  public function photos() {
+    return $this->acf_fields->photos;
   }
 
   public function video() {

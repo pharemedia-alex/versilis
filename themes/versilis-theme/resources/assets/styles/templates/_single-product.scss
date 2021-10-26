@@ -1,0 +1,19 @@
+// ==========================================================================
+// Templates / Single Product
+// ==========================================================================
+
+.single-product {
+  .product {
+    &__overview {
+      display: block;
+
+      .documents {
+        text-align: right;
+
+        > a:not(:last-child) {
+          margin-right: rem-calc(16px);
+        }
+      }
+    }
+  }
+}

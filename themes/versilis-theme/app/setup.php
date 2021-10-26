@@ -11,9 +11,14 @@ use Roots\Sage\Template\BladeProvider;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
+    global $post;
+    $base = get_permalink($post->ID);
+
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_style( 'google_fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@500,700&display=swap', false, null );
+    wp_enqueue_style( 'google_fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;500;700&display=swap', false, null );
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+    wp_localize_script( 'sage/main.js', 'ajaxObject', [ 'AjaxURL' => admin_url( 'admin-ajax.php' ), 'pageURL' => $base, ]);
+
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -156,3 +161,8 @@ add_filter( 'acf/settings/load_json', function($paths) {
     $paths[] = get_stylesheet_directory() . '/acf';
     return $paths;
 });
+
+
+
+add_action( 'wp_ajax_filter_case_studies', '\App\Controllers\Ajax::filterCaseStudies' );
+add_action( 'wp_ajax_nopriv_filter_case_studies', '\App\Controllers\Ajax::filterCaseStudies' );

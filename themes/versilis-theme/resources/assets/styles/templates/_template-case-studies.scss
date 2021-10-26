@@ -1,0 +1,85 @@
+// ==========================================================================
+// Templates / Case studies
+// ==========================================================================
+
+.template-case-studies {
+  .filters {
+    select {
+      display: inline-block;
+      margin-left: $spacing;
+      padding: rem-calc(8px) rem-calc(32px) rem-calc(8px) rem-calc(16px);
+      color: $color-black;
+      //max-width: 150px;
+      outline: none;
+      box-sizing: border-box;
+      border: 2px solid $color-grey-3;
+      box-shadow: none;
+      border-radius: rem-calc(10px);
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAICAYAAAAvOAWIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACUSURBVHgBlY0xCsJAEEX/aGuRRojabBXE6l8hN/EI3kBv4hW8gUdwS8u1S2GRQhAEXWeKwLCkyYcPy857M8CUbHbkquGt3jKMzdcNj9qzvWffHwgBJeNaCgZmwSkDrAIrsU+F9gqbnXTYdveYBhAZ8f1B26fYy7DFC9qL9uBBY8SfdQJK0DL38OvZxcWyfqgQSnBy/tCGQMc8m3edAAAAAElFTkSuQmCC");
+      background-repeat: no-repeat;
+      background-position: right 12px top 50%, 0 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 60%;
+        margin-top: -6px;
+        right: -20px;
+        border: 1px solid $color-light-green;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        display: inline-block;
+        padding: 3px;
+        transition: all $transition-normal $ease-out-expo;
+      }
+    }
+  }
+
+  .tile {
+    padding: 0;
+    height: auto;
+
+    &__header {
+      position: relative;
+      padding-bottom: 70%;
+      height: 0;
+      overflow: hidden;
+    }
+
+    &__header-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: scale(1);
+      transition: all $transition-slow $ease-out-expo;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    a {
+      @include u-all-state {
+        .tile__header-image {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    &__content {
+      .project-location {
+        margin: rem-calc(8px) 0;
+      }
+    }
+  }
+}

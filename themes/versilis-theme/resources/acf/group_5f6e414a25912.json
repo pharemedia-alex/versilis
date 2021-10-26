@@ -1,27 +1,7 @@
 {
     "key": "group_5f6e414a25912",
     "title": "Content",
-    "fields": [
-        {
-            "key": "field_5f6e414a4ef54",
-            "label": "Content",
-            "name": "content",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "visual",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
-        }
-    ],
+    "fields": [],
     "location": [
         [
             {
@@ -48,7 +28,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
+    "active": false,
     "description": "base template",
-    "modified": 1601061312
+    "modified": 1635172173
 }

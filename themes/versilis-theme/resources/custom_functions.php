@@ -258,3 +258,70 @@ function disable_icl_metabox() {
     global $post;
     remove_meta_box('icl_div_config',$post->posttype,'normal');
 }
+
+function my_acf_google_map_api( $api ){
+	
+	$api['key'] = 'AIzaSyCi2-xh7rI1qS1hWtHeue4EhQlnCaPpVLU';
+	return $api;
+
+}
+
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+/* Save project location after using Google maps */
+add_action('acf/save_post', 'save_project_location');
+function save_project_location( $post_id ) {
+
+    if ( 'case-study' == get_post_type() ) {
+
+        $project_location_map = get_field('project_location_map', $post_id);
+        $project_location .= ( !empty($project_location_map['city']) ) ? $project_location_map['city'] . ', ' : '';
+        $project_location .= ( !empty($project_location_map['state_short']) ) ? $project_location_map['state_short'] . ', ' : '';
+        $project_location .= ( !empty($project_location_map['country_short']) ) ? $project_location_map['country_short'] : '';
+
+    }
+    
+    update_field('project_location', $project_location, $post_id);
+
+    $all_locations = (array) json_decode(get_option('case_studies_locations'));
+    if($all_locations===NULL) {
+        $all_locations = array();
+    }
+    
+    if ( array_search($project_location, $all_locations)===false && $project_location!==null) {
+        
+        $all_locations[$project_location_map['place_id']] = $project_location;
+        update_option('case_studies_locations', json_encode($all_locations));
+
+    }
+}
+
+// Number Pagination Function 
+function custom_pagination( $max, $current, $url='') {
+    
+    $big = 9999999; // need an unlikely integer
+    if (get_query_var('location'))
+    $add_args = array();
+    $query_vars = array('location', 'product-id', 'application');
+    
+    foreach( $query_vars as $var ) {
+        if ( isset($_POST[$var]) && !empty($_POST[$var]) ) {
+            $add_args[$var] = $_POST[$var];
+        }
+    }
+    
+    $fallback_base = str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) );
+    $base = isset( $url ) ? trailingslashit( $url ) . '%_%' : $fallback_base;
+
+    echo paginate_links( 
+        array(
+            'base'       => $base,
+            'format'     => '?paged=%#%',
+            'current'    => $current,
+            'total'      => $max,
+            'prev_text'  => __('previous page', 'versilis-theme'),
+            'next_text'  => __('next page', 'versilis-theme'),
+            'add_args'   => $add_args
+        )
+    );
+}

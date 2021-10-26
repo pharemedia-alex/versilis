@@ -1,0 +1,110 @@
+// ==========================================================================
+// Components / Case studies list
+//
+// ==========================================================================
+
+.case-studies-list {
+  overflow: hidden;
+
+  .swiper-container {
+    overflow: visible;
+  }
+
+  .case-studies__swiper-pagination {
+    text-align: center;
+
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      margin: rem-calc(4px) rem-calc(6px);
+      opacity: 0.1;
+
+      &.swiper-pagination-bullet-active {
+        background-color: $color-black;
+        opacity: 1;
+      }
+    }
+  }
+
+  .project {
+    &__header {
+      position: relative;
+      padding-bottom: 88%;
+      height: 0;
+      overflow: hidden;
+    }
+
+    &__header-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: scale(1);
+      transition: all $transition-slow $ease-out-expo;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  .project-info {
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h3 {
+      margin-bottom: rem-calc(4px);
+    }
+
+    span {
+      font-size: 16px;
+    }
+
+    a {
+      margin-left: rem-calc(16px);
+    }
+  }
+
+  &-nav {
+    display: none;
+    width: 100%;
+    text-align: right;
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+    }
+
+    div {
+      &:first-child {
+        margin-right: $spacing;
+      }
+
+      &.icon__wrapper {
+        background-color: $color-black;
+        border-color: $color-black;
+
+        svg {
+          color: $color-white;
+        }
+      }
+
+      @include u-all-state {
+        &.icon__wrapper:not(.swiper-button-disabled) {
+          background-color: $color-white;
+
+          svg {
+            color: $color-black;
+          }
+        }
+      }
+    }
+  }
+}

@@ -15,8 +15,8 @@
   outline: none !important;
   padding: rem-calc(12px) rem-calc(32px);
   transition: all $transition-normal $ease-out-quart;
-  background-color: transparent;
-  color: $color-primary;
+  background-color: $color-black;
+  color: $color-white;
 
   &::before {
     content: "";
@@ -34,9 +34,15 @@
   @include fluid-type($breakpoint-sm, $breakpoint-lg, $button-font-size-min, $button-font-size-max);
   @include border-radius(100px);
 
+  &:hover,
+  &:active {
+    color: $color-white;
+    background-color: $color-blue-2;
+  }
+
   &:focus {
     &::before {
-      border-color: $color-primary;
+      border-color: $color-blue-2;
     }
   }
 
@@ -135,5 +141,48 @@
     padding-left: rem-calc(6px);
     height: 20px;
     width: 40px;
+  }
+
+  &[class*="--with-icon"] {
+    padding: 6px 12px;
+    border: 2px solid $color-grey-2;
+
+    &::before {
+      content: none;
+    }
+
+    @include border-radius(10px);
+
+    &:hover,
+    &:active {
+      background-color: $color-grey-2;
+    }
+
+    &:focus {
+      &::before {
+        border-color: $color-grey-2;
+      }
+    }
+  }
+
+  &[class*="--secondary"] {
+    color: $color-black;
+    background-color: $color-white;
+    border: 2px solid $color-black;
+
+    &:hover,
+    &:active {
+      color: $color-white;
+      border: 2px solid $color-primary;
+      background-color: $color-primary;
+    }
+
+    &:focus {
+      background-color: $color-primary;
+
+      &::before {
+        border-color: $color-grey-2;
+      }
+    }
   }
 }

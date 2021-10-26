@@ -57,7 +57,6 @@
   }
 }
 
-/*
 .icon__wrapper {
   @include icon-colors;
 
@@ -134,16 +133,20 @@
     opacity: 0.35;
     cursor: auto;
     pointer-events: none;
-    color: $color-light-grey; // color the arrow in light grey when nav disabled
   }
 }
-
-*/
 
 // ------------------ Rotation arrow nav prev ------------------
 .nav-icon {
   &__prev {
     transform-origin: center;
     transform: rotate(180deg);
+  }
+}
+
+.with-icon {
+  span {
+    padding-left: 6px;
+    vertical-align: middle;
   }
 }

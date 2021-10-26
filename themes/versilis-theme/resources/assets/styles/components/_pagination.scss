@@ -1,0 +1,26 @@
+// ==========================================================================
+// Components / pagination
+//
+// ==========================================================================
+
+.pagination {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-family: $font-secondary;
+  font-weight: 400;
+
+  a,
+  span {
+    margin: 0 rem-calc(8px);
+  }
+
+  .current {
+    font-weight: bold;
+  }
+
+  .next,
+  .prev {
+    text-decoration: underline;
+  }
+}

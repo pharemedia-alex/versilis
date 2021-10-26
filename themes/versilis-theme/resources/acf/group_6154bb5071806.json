@@ -168,7 +168,7 @@
         {
             "key": "field_6157511cd170d",
             "label": "Projet location",
-            "name": "project_location",
+            "name": "project_location_map",
             "type": "google_map",
             "instructions": "",
             "required": 0,
@@ -182,6 +182,25 @@
             "center_lng": "",
             "zoom": 12,
             "height": ""
+        },
+        {
+            "key": "field_617020a7a58a1",
+            "label": "Projet location",
+            "name": "project_location",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "disabled",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_61575151d170e",
@@ -465,7 +484,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "id",
             "preview_size": "medium",
             "insert": "append",
             "library": "all",
@@ -604,6 +623,7 @@
                 "field_6154c12a47d82",
                 "field_6154c17647d88",
                 "field_6154c19047d89",
+                "field_61730fb257f47",
                 "field_6154c1b347d8a",
                 "field_6154c20247d8b",
                 "field_6154c23947d8c",
@@ -679,5 +699,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1633113505
+    "modified": 1634930740
 }

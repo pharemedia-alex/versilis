@@ -94,6 +94,10 @@ add_action( 'admin_enqueue_scripts', function() {
             display: inline-block;
             margin-right: 20px;
         }
+        .acf-field.disabled input{
+            pointer-events:none;
+            background-color: #EEE;
+        }
     </style>
 <?php
 } );

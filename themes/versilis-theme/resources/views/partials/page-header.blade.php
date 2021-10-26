@@ -19,7 +19,7 @@
 
     <div class="page-header__content">
       <div class="o-container -t-animate">
-        <div class="row {!! ($page_header->alignment=='center') ? 'justify-content-center' : '' !!}">
+        <div class="row justify-content-center">
           <div class="col-12 col-lg-12 col-xl-10">
             <h1>
               {!! !empty($page_header->content->title) ? $page_header->content->title : get_the_title() !!}
@@ -34,21 +34,21 @@
         @if( get_post_type()==="case-study" )
           <div class="o-wrapper --pt-sm">
             {{-- @if ( !empty($properties->location) ) --}}
-              <div class="case-study__prop">
+              <div class="case-study__prop with-icon">
                 @icon('location','icon')
-                <span>test{!! $properties->location !!}</span>
+                <span>{!! $properties->location !!}</span>
               </div>
             {{-- @endif --}}
 
             @if ( !empty($properties->status) )
-              <div class="case-study__prop">
+              <div class="case-study__prop with-icon">
                 @icon('settings','icon')
                 <span>{!! $properties->status !!}</span>
               </div>
             @endif
 
             @if ( !empty($properties->application) )
-              <div class="case-study__prop">
+              <div class="case-study__prop with-icon">
                 @icon('forms','icon')
                 <span>{!! $properties->application !!}</span>
               </div>

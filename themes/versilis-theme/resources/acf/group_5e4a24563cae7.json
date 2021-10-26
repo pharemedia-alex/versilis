@@ -216,6 +216,28 @@
             "ui": 1
         },
         {
+            "key": "field_6171c5f8a78da",
+            "label": "Case studies",
+            "name": "case_studies_page",
+            "type": "post_object",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
             "key": "field_60d9f17792e1c",
             "label": "Module images",
             "name": "",
@@ -445,5 +467,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "General options for the theme, ex: footer, default content for modules, etc",
-    "modified": 1633101222
+    "modified": 1635193268
 }

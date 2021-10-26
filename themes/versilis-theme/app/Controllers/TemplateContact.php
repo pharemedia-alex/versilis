@@ -23,4 +23,18 @@ class TemplateContact extends Controller
       'content'  => $this->acf_fields->content
     );
   }
+
+  public function contact_info() {
+    $output = array(
+      'text' => $this->acf_fields->contact_info_text,
+      'info' => $this->acf_fields->contact_info,
+      'addresses' => $this->acf_fields->contact_info_addresses,
+    );
+
+    return (object) $output;
+  } 
+
+  public function distributors() {
+    return $this->acf_fields->distributors;
+  }
 }

@@ -13,18 +13,19 @@
   input[type="tel"],
   input[type="number"],
   select {
-    border-radius: 0 !important;
     width: 100%;
-    background-color: transparent;
-    color: $color-white;
+    background-color: white;
+    color: $color-black;
+    border: none;
   }
 
   textarea {
     width: 100%;
-    background-color: transparent;
-    color: $color-primary;
+    background-color: white;
+    color: $color-black;
     padding: $spacing;
     margin-top: 8px;
+    border: none;
   }
 
   input[type="submit"] {
@@ -35,8 +36,7 @@
     label {
       position: relative;
       pointer-events: none;
-      font-weight: 400;
-      margin-bottom: 0;
+      display: none;
     }
 
     &[data-label="floating"] {
@@ -97,10 +97,9 @@
   select:-webkit-autofill,
   select:-webkit-autofill:hover,
   select:-webkit-autofill:focus {
-    -webkit-text-fill-color: $color-light-green !important;
-    -webkit-box-shadow: 0 0 0 1000px $color-primary inset;
-    color: $color-light-beige;
-    border-bottom: 1px solid $color-light-green;
+    -webkit-text-fill-color: $color-black !important;
+    -webkit-box-shadow: 0 0 0 1000px $color-white inset;
+    color: $color-white;
   }
 }
 
@@ -216,102 +215,3 @@ span.wpcf7 {
   background: #fff;
   padding: 0.2em 0.8em;
 }
-
-// ---------------- Previous ---------------- //
-// form {
-//   .contact-form__element {
-//     display: flex;
-//     align-items: center;
-//     justify-content: flex-start;
-//   }
-
-//   legend {
-//     font-size: 1.2rem;
-//   }
-
-//   label {
-//     display: block;
-//   }
-
-//   .field-wrapper {
-//     display: block;
-//   }
-
-//   .req {
-//     color: #f55;
-//   }
-
-//   .options-group {
-//     border: 1px solid #666;
-//     max-height: 269px;
-//     overflow-y: auto;
-//     padding: 1rem;
-
-//     ul {
-//       list-style-type: none;
-//       margin: 0;
-//       padding: 0;
-
-//       li {
-//         input[type="checkbox"] {
-//           margin-right: 10px;
-//         }
-//       }
-//     }
-//   }
-
-//   .error_required {
-//     select,
-//     input {
-//       border: 1px solid #f55;
-//       background-color: #fed4d4;
-//     }
-
-//     .error_message {
-//       color: #f55;
-//     }
-
-//     .options-group {
-//       border-color: #f55;
-//     }
-//   }
-
-//   .input[type="text"] {
-//     vertical-align: middle;
-//     color: $color-black;
-//     border: 1px solid #fff;
-//     border-radius: 8px;
-//     height: 34px;
-//     padding: 5px 8px;
-//     transition: all 0.4s ease;
-//     text-transform: uppercase;
-//     font-size: 12px;
-//     width: 270px;
-//     margin-right: 20px;
-//   }
-
-//   input[type="radio"] {
-//     margin-right: 10px;
-//   }
-
-//   .submit {
-//     vertical-align: middle;
-//     background-color: transparent;
-//     color: $color-white;
-//     border: 1px solid $color-white;
-//     border-radius: 20px;
-//     height: 40px;
-//     padding: 8px 18px;
-//     outline: none;
-//     transition: all $transition-normal ease;
-//     text-transform: uppercase;
-//     font-size: 12px;
-//     opacity: 0.5;
-
-//     &:hover,
-//     &:active,
-//     &:focus {
-//       opacity: 1;
-//     }
-//   }
-// }

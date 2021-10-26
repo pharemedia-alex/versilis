@@ -3,12 +3,24 @@
 // ==========================================================================
 
 .template-contact {
-  background-color: $color-primary;
-
   .page-header {
-    padding-top: rem-calc(220px);
+    padding-top: rem-calc(100px);
     height: auto;
-    max-height: none;
+    min-height: auto;
+    background-color: $color-grey-4;
+    padding-bottom: 0;
+
+    h1 {
+      color: $color-black;
+    }
+
+    &__subtitle {
+      color: $color-black;
+    }
+
+    &::before {
+      content: none;
+    }
 
     &__bg-img {
       img,
@@ -29,7 +41,18 @@
 
   // ------------------- Form ---------------------
   .contact-form {
-    color: $color-light-green;
+    position: relative;
+    background-color: $color-grey-4;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -24px;
+      left: 0;
+      width: 100%;
+      height: 46px;
+      background: url("../images/hatched_border.png") repeat-x;
+    }
 
     &__element {
       font-size: 16px;
@@ -43,7 +66,16 @@
     */
 
     .o-wrapper {
-      margin-bottom: $spacing-small //20px pb o-wrapper + 40px margin = 60px
+      margin-bottom: $spacing-small;
+    }
+
+    label {
+      font-weight: bold;
+      color: $color-black;
+
+      &.hide {
+        display: none;
+      }
     }
 
     input[type="text"],
@@ -51,15 +83,35 @@
     input[type="tel"],
     input[type="number"],
     select {
-      color: $color-white;
-      border-bottom: 1px solid $color-light-green;
-      border-top: 0;
-      border-left: 0;
-      border-right: 0;
-      height: rem-calc(32px);
+      display: block;
+      width: 100%;
+      border-radius: 6px;
       outline: none;
+      margin-bottom: rem-calc(20px);
+      box-shadow: 0 4px 7px rgba(0, 0, 0, 0.03);
+      height: rem-calc(50px);
+      padding: 0 rem-calc(20px);
+      border: 1px solid $color-grey-3;
+    }
 
-      @include fluid-type($breakpoint-sm, $breakpoint-lg, $body-font-size-min, $body-font-size-max);
+    input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      font-weight: bold;
+      color: $color-black;
+    }
+
+    input::-moz-placeholder { /* Firefox 19+ */
+      font-weight: bold;
+      color: $color-black;
+    }
+
+    input:-ms-input-placeholder { /* IE 10+ */
+      font-weight: bold;
+      color: $color-black;
+    }
+
+    input:-moz-placeholder { /* Firefox 18- */
+      font-weight: bold;
+      color: $color-black;
     }
 
     .form-mention {
@@ -69,27 +121,22 @@
     }
 
     textarea {
-      border: 1px solid $color-light-green;
+      display: block;
       outline: none;
-      color: $color-white;
-
-      @include fluid-type($breakpoint-sm, $breakpoint-lg, $body-font-size-min, $body-font-size-max);
+      color: $color-black;
+      font-weight: 16px;
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: rem-calc(20px);
+      box-shadow: 0 4px 7px rgba(0, 0, 0, 0.03);
+      padding: 0 rem-calc(20px);
+      border: 1px solid $color-grey-3;
     }
 
     input[type=submit] {
       @extend .btn;
 
-      background-color: $color-light-green;
-      color: $color-primary;
-      line-height: $button-line-height;
-      font-weight: 600;
-      border: 2px solid $color-light-green;
       outline: none;
-
-      @include u-all-state {
-        background-color: transparent;
-        color: $color-light-green;
-      }
     }
 
     .form__btn {
@@ -305,6 +352,52 @@
     .sent {
       .wpcf7-response-output {
         border: 2px solid green;
+      }
+    }
+  }
+
+  .contact-info {
+    &__intro {
+      font-weight: bold;
+    }
+
+    &__info {
+      font-weight: bold;
+      color: $color-secondary;
+      margin-top: $spacing;
+    }
+
+    &__addresses {
+      margin-top: $spacing;
+    }
+  }
+
+  .distributors {
+    h2 {
+      text-align: center;
+    }
+
+    h3 {
+      padding-bottom: rem-calc(20px);
+      margin-bottom: rem-calc(20px);
+      border-bottom: 1px solid $color-blue-1;
+    }
+
+    .distributor {
+      &__address {
+        font-weight: 400;
+      }
+
+      &__contact-info {
+        font-weight: 400;
+
+        > div {
+          color: $color-red-1;
+
+          span {
+            color: $color-white;
+          }
+        }
       }
     }
   }

@@ -171,13 +171,18 @@
 
       {{-- Photo gallery --}}
 
-      @if ( !empty($video) )
+      @if ( !empty($photos) )
       <section class="case-study__photos">
 
         <div class="o-container --pt-xl --pb-xl">
             
           <div class="row justify-content-center">
-
+            @dump($photos)
+            @if( $photos )
+              @foreach ($photos as $image_id)
+                {!! wp_get_attachment_image( $image_id, 'full' ); !!} 
+              @endforeach
+            @endif
           </div>
 
         </div>
