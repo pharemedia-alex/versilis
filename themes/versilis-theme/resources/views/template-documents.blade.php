@@ -32,26 +32,24 @@
                     <h3>{!! $category['title'] !!}</h3>
                   </div>
                 </div>
-
-                <div class="row">
-                
-                  @foreach( $category['documents'] as $doc )
-
-                    <div class="col-12 col-lg-6">
-                      <a href="{!! $doc !!}" class="document" title="{!! $doc['title'] !!}">
-                        <div class="document__info">
-                          <span class="document__title">{!! $doc['title'] !!}<br/>
-                          <span class="document__description">{!! $doc['description'] !!}</span>
-                          @icon('download', 'icon')
-                        </div>
-                      </a>
-                    </div>
-                  
-                  @endforeach
-                  
-                </div>
-
               @endif
+
+              <div class="row">
+              
+                @foreach( $category['documents'] as $doc )
+                  <div class="col-12 col-lg-6 u-mb-sm">
+                    <a href="{!! $doc['file'] !!}" class="document" title="{!! $doc['title'] !!}">
+                      <div class="document__info">
+                        <span class="document__title">{!! $doc['title'] !!}<br/>
+                        <span class="document__description">{!! $doc['description'] !!}</span>
+                      </div>
+                      @icon('download', 'icon icon--md')
+                    </a>
+                  </div>
+                
+                @endforeach
+                
+              </div>             
 
             @endforeach
 

@@ -31,11 +31,6 @@ class App extends Controller
         return get_the_title();
     }
 
-    public function footer() {
-        $footer_content = (object) get_fields('options');
-        return $footer_content;
-    }
-
     public function contact_link() {
         return (object) array(
             'page'              => get_field('contact_page', 'options'),
@@ -146,5 +141,12 @@ class App extends Controller
             }
             return $items;
         }
+    }
+
+    public function footer() {
+        return array(
+            'address'       => get_field('address', 'options'),
+            'social_media'  => get_field('social_media', 'options')
+        );
     }
 }

@@ -95,7 +95,7 @@ Container::getInstance()
 include('custom_functions.php');
 
 //include blocks
-include('blocks.php');
+//include('blocks.php');
 
 //include custom functions file for the project here
 include('ajax/tasks.php');

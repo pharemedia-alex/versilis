@@ -52,7 +52,8 @@ add_action('after_setup_theme', function () {
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'versilis-theme'),
         'secondary_navigation' => __('Top menu', 'versilis-theme'),
-        'footer_navigation' => __('Footer menu', 'versilis-theme')
+        'footer_navigation_1' => __('Footer menu 1', 'versilis-theme'),
+        'footer_navigation_2' => __('Footer menu 2', 'versilis-theme')
     ]);
 
     /**
@@ -94,10 +95,17 @@ add_action('widgets_init', function () {
         'name'          => __('Primary', 'versilis-theme'),
         'id'            => 'sidebar-primary'
     ] + $config);
+
+    $config_footer = [
+        'before_widget' => '<div class="col"><div class="o-wrapper --pb-md">',
+        'after_widget'  => '</div></div>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4>',
+    ];
     register_sidebar([
         'name'          => __('Footer', 'versilis-theme'),
         'id'            => 'sidebar-footer'
-    ] + $config);
+    ] + $config_footer);
 });
 
 /**

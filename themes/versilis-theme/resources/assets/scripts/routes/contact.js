@@ -5,6 +5,7 @@ export default {
     
     this.form = new Form('.contact-form__element','[data-label="floating"]');
 
+    /*
     let _elFileUpload = document.querySelector('.wpcf7-form .file-upload-field');
     _elFileUpload.addEventListener('change', function() {
       let _elFilename = document.querySelector('.wpcf7-form .file-upload-name');
@@ -20,7 +21,9 @@ export default {
       
       _elUploadBtn.textContent = _elUploadBtn.getAttribute('data-change-text'); 
     });
+    */
 
+    /*
     document.addEventListener( 'wpcf7mailsent', function( ) {
       let thankyouURL = document.querySelector('.wpcf7-form .thank-you-URL').value;
       console.log(thankyouURL);
@@ -28,5 +31,6 @@ export default {
         window.location.href = thankyouURL;
       }
     }, false );
+    */
   },
 };

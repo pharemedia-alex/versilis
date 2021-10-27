@@ -1,8 +1,8 @@
 // ==========================================================================
-// Templates / Documents
+// Templates / Videos
 // ==========================================================================
 
-.template-documents {
+.template-videos {
   .page-header {
     padding-top: rem-calc(100px);
     height: auto;
@@ -39,22 +39,8 @@
     }
   }
 
-  .document {
-    position: relative;
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: 600;
-    cursor: pointer;
-    outline: none !important;
-    padding: rem-calc(12px) rem-calc(32px);
-    color: $color-primary;
-    border: 2px solid $color-grey-2;
-    border-radius: 6px;
-    min-height: rem-calc(80px);
-    height: 100%;
+  .tile {
+    padding: 0;
 
     &__description {
       font-weight: 400;

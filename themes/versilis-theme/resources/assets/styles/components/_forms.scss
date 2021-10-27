@@ -33,20 +33,23 @@
   }
 
   .field {
+    position: relative;
+
     label {
-      position: relative;
       pointer-events: none;
-      display: none;
     }
 
     &[data-label="floating"] {
       label {
-        transform: translate3d(0, 28px, 0);
+        position: absolute;
+        padding: 0 rem-calc(20px);
+        top: 4px;
+        transform: translate3d(0, 10px, 0);
         transition: all $transition-normal $ease-out-quad;
         transform-origin: 0 0;
 
         &.floating-label-active {
-          transform: translate3d(0, 2px, 0) scale(0.9);
+          transform: translate3d(0, 0, 0) scale(0.8);
         }
       }
     }

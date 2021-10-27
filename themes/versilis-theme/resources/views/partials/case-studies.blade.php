@@ -6,16 +6,19 @@
     <div class="case-studies__content-wrapper -t-animate">
       <div class="o-container --pt-xl --pb-xl">
         <div class="row">
-          <div class="col-12 col-lg-6">
-            
+          <div class="col-12 col-lg-6">        
             <h2 class="u-mb">{!! $case_studies->title !!}</h2>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <div class="col">
             <a href="{!! $case_studies->view_all !!}"
-               title="{!! __('View all case studies', 'versilis-theme') !!}"
-               class="btn">
-               {!! __('View all', 'versilis-theme') !!}
+              title="{!! __('View all case studies', 'versilis-theme') !!}"
+              class="btn">
+              {!! __('View all', 'versilis-theme') !!}
             </a>
           </div>
-          <div class="col-12">
+          <div class="col">
             <div class="case-studies-list-nav">
               <div class="case-studies-list-nav__prev icon__wrapper size--lg">
                 @icon('chevron','nav-icon__prev icon--lg')
@@ -28,7 +31,7 @@
         </div>
         <div class="row">
           <div class="col-12 col-lg-11 offset-lg-1">
-            <div class="o-wrapper --pt-md --pb-sm">
+            <div class="o-wrapper --pt-md">
               <div class="case-studies-slider__wrapper">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
@@ -49,7 +52,7 @@
                               @if ( has_post_thumbnail( ) )
                                 {!! get_the_post_thumbnail( ) !!}
                               @else
-                                {{-- prevoir placeholder --}}
+                                {{-- placeholder --}}
                               @endif
                             </div>
                           </div>
@@ -78,7 +81,7 @@
             </div>
           </div>
         </div>
-        <div class="case-studies__swiper-pagination"></div>
+        <div class="case-studies__swiper-pagination u-mt-md"></div>
       </div>
     </div>
   </section>

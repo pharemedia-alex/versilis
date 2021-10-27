@@ -1897,7 +1897,7 @@
                         {
                             "key": "field_6154c4710d6b6",
                             "label": "Title",
-                            "name": "title",
+                            "name": "cta_title",
                             "type": "text",
                             "instructions": "",
                             "required": 1,
@@ -1916,7 +1916,7 @@
                         {
                             "key": "field_6154c4710d6b7",
                             "label": "Text",
-                            "name": "text",
+                            "name": "cta_text",
                             "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
@@ -1935,7 +1935,7 @@
                         {
                             "key": "field_6154c4a00d6bd",
                             "label": "Link",
-                            "name": "link",
+                            "name": "cta_link",
                             "type": "link",
                             "instructions": "",
                             "required": 1,
@@ -1984,5 +1984,5 @@
     ],
     "active": 1,
     "description": "Content blocks for flexible layout shared by all templates",
-    "modified": 1634930662
+    "modified": 1635265508
 }

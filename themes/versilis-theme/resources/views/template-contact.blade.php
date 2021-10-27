@@ -14,14 +14,16 @@
 
     <div class="o-main-container">
 
-      <section class="contact-form -t-animate">
+      <section class="contact-form -t-animate hatched-border">
         <div class="o-container --pb-xl">
           <div class="row">
             <div class="col-12 col-lg-6">
               <div class="o-wrapper --pt-md">
-                @if ( !empty($form->contact_form) )
-                  {!! do_shortcode($form->contact_form) !!}
-                @endif
+                <div class="contact-form__element">
+                  @if ( !empty($form->contact_form) )
+                    {!! do_shortcode($form->contact_form) !!}
+                  @endif
+                </div>
               </div>
             </div>
             
