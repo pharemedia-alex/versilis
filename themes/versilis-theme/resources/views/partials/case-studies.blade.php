@@ -5,16 +5,16 @@
 
     <div class="case-studies__content-wrapper -t-animate">
       <div class="o-container --pt-xl --pb-xl">
-        <div class="row">
+        <div class="row -t-animate">
           <div class="col-12 col-lg-6">        
             <h2 class="u-mb">{!! $case_studies->title !!}</h2>
           </div>
         </div>
-        <div class="row align-items-end">
+        <div class="row align-items-end -t-animate">
           <div class="col">
             <a href="{!! $case_studies->view_all !!}"
               title="{!! __('View all case studies', 'versilis-theme') !!}"
-              class="btn">
+              class="btn --primary">
               {!! __('View all', 'versilis-theme') !!}
             </a>
           </div>
@@ -29,7 +29,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row -t-animate">
           <div class="col-12 col-lg-11 offset-lg-1">
             <div class="o-wrapper --pt-md">
               <div class="case-studies-slider__wrapper">
@@ -64,7 +64,7 @@
                                 <span>{!! $project_location !!}</span>
                               </div>
                             </div>
-                            <a href="{!! get_permalink($post->ID) !!}" 
+                            <a href="{!! get_permalink() !!}" 
                                title="{!! __('View project', 'versilis-theme') . ' - ' . $project_title !!}"
                                class="btn --secondary">
                               {!! __('View', 'versilis-theme') !!}

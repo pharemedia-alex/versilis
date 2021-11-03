@@ -16,7 +16,7 @@ class TemplateFaq extends Controller
     $this->acf_fields = (object) get_fields();
   }
 
-  public function questions() {
+  public function faq() {
     return $this->acf_fields->questions;
   }
 }

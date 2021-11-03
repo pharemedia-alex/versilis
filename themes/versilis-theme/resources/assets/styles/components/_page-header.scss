@@ -37,8 +37,9 @@
   &__subtitle {
     text-align: center;
     font-weight: 400;
+    margin-top: 1rem;
 
-    @include fluid-type($breakpoint-sm, $breakpoint-xxl, $font-size-h3-min, $font-size-h3-max);
+    @include fluid-type($breakpoint-sm, $breakpoint-xl, 14px, 18px);
   }
 
   &__content {
@@ -66,6 +67,10 @@
       font-weight: 700;
       text-align: center;
       text-transform: uppercase;
+    }
+
+    .label {
+      text-align: center;
     }
   }
 }
@@ -122,6 +127,8 @@
 
       .case-study__prop {
         display: inline-block;
+
+        @include fluid-type($breakpoint-sm, $breakpoint-xl, 14px, 18px);
       }
     }
   }

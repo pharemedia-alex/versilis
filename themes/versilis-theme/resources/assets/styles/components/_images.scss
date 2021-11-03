@@ -1,0 +1,129 @@
+// ==========================================================================
+// Components / images
+// patterns
+//
+// ==========================================================================
+
+.pattern-1 {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    background: url("../images/patterns/pattern_1.png") no-repeat;
+    background-size: contain;
+    width: 230px;
+    height: 230px;
+  }
+
+  &.pattern-right {
+    padding-right: 16%;
+
+    &::after {
+      right: -15%;
+    }
+  }
+
+  &.pattern-left {
+    padding-left: 16%;
+
+    &::after {
+      left: -10%;
+    }
+  }
+}
+
+.pattern-2 {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    background: url("../images/patterns/pattern_2.png") no-repeat;
+    background-size: contain;
+    width: 260px;
+    height: 274px;
+  }
+
+  &.pattern-right {
+    padding-right: 16%;
+
+    &::after {
+      right: -15%;
+    }
+  }
+
+  &.pattern-left {
+    padding-left: 16%;
+
+    &::after {
+      left: -15%;
+    }
+  }
+}
+
+.pattern-3 {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    background: url("../images/patterns/pattern_3.png") no-repeat;
+    background-size: contain;
+    width: 274px;
+    height: 260px;
+  }
+
+  &.pattern-right {
+    padding-right: 16%;
+
+    &::after {
+      right: -15%;
+    }
+  }
+
+  &.pattern-left {
+    padding-left: 16%;
+
+    &::after {
+      left: -15%;
+    }
+  }
+}
+
+.pattern-4 {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 35%;
+    transform: translate(0, -50%);
+    background: url("../images/patterns/pattern_4.png") no-repeat;
+    background-size: contain;
+    width: 144px;
+    height: 307px;
+  }
+
+  &.pattern-right {
+    padding-right: 16%;
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  &.pattern-left {
+    padding-left: 16%;
+
+    &::after {
+      left: 0;
+    }
+  }
+}

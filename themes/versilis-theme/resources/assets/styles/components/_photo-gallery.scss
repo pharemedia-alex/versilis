@@ -1,0 +1,117 @@
+// ==========================================================================
+// Components / photos gallery
+// 
+// ==========================================================================
+
+#photo-gallery {
+  opacity: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: $color-primary;
+  z-index: 100;
+  overflow: hidden;
+  transition: opacity $transition-slow $ease-out-expo;
+
+  .photo-gallery-container {
+    position: relative;
+    height: 100%;
+  }
+
+  .photo-gallery-slider__wrapper {
+    position: relative;
+  }
+
+  .photo-gallery-nav__next,
+  .photo-gallery-nav__prev {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 99;
+
+    &.icon__wrapper {
+      border-color: $color-white;
+      color: $color-white;
+
+      &:hover,
+      &:active {
+        border-color: $color-white;
+        background-color: $color-white;
+        color: $color-primary;
+      }
+    }
+  }
+
+  .photo-gallery-nav__next {
+    right: -70px;
+  }
+
+  .photo-gallery-nav__prev {
+    left: -70px;
+  }
+
+  .swiper-container {
+    position: relative;
+    height: 80vh;
+    margin-top: 10vh;
+    box-sizing: border-box;
+  }
+
+  .photo-gallery__swiper-pagination {
+    text-align: center;
+
+    .swiper-pagination-bullet {
+      background-color: $color-white;
+      width: 10px;
+      height: 10px;
+      margin: rem-calc(4px) rem-calc(6px);
+      opacity: 0.4;
+
+      &.swiper-pagination-bullet-active {
+        background-color: $color-white;
+        opacity: 1;
+      }
+    }
+  }
+
+  .swiper-slide {
+    position: relative;
+
+    .photo-gallery-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    margin-top: rem-calc(40px);
+    margin-right: rem-calc(40px);
+    color: $color-white;
+  }
+
+  &.is-active {
+    opacity: 1;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+
+  &.is-visible {
+    display: block;
+  }
+}

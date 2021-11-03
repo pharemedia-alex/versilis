@@ -46,18 +46,18 @@
 
       <div class="innovation__content-wrapper -t-animate">
         <div class="o-container --pt-xl --pb-xl">
-          <div class="row">
+          <div class="row -t-animate">
             <div class="col-12 col-lg-6">        
               <h2 class="u-mb">{!! $innovation['title'] !!}</h2>
               <div class="innovation__intro">{!! $innovation['text'] !!}</div>
             </div>
           </div>
-          <div class="row align-items-end">
+          <div class="row  -t-animate align-items-end">
             <div class="col">
               <a href="{!! $innovation['link']['url'] !!}"
                  title="{!! $innovation['link']['title'] !!}"
                  target="{!! $innovation['link']['target'] !!}"
-                 class="btn u-mt-sm">
+                 class="btn --primary u-mt-sm">
                  {!! $innovation['link']['title'] !!}
               </a>
             </div>
@@ -72,7 +72,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row -t-animate">
             <div class="col-12 col-lg-11 offset-lg-1">
               <div class="o-wrapper --pt-md --pb-sm">
                 <div class="innovation-list-slider__wrapper">
@@ -92,7 +92,7 @@
                               <a href="{!! $element['link']['url'] !!}"
                                   title="{!! $element['link']['title'] !!}"
                                   target="{!! $element['link']['target'] !!}"
-                                  class="btn u-mt-sm">
+                                  class="btn --secondary u-mt-sm">
                                   {!! $element['link']['title'] !!}
                               </a>
                             </div>
@@ -122,14 +122,14 @@
 
       <section class="map">
         <div class="o-container --pb-md --pt-xl">
-          <div class="row justify-content-center">
+          <div class="row justify-content-center -t-animate">
             <div class="col-12 col-xl-6">
               <h2 class="u-mb-md">{!! $map['title'] !!}</h2>
             </div>
           </div>
           <div class="row justify-content-center map-bg">
             <div class="col-12">
-              <div class="map__info__wrapper">
+              <div class="map__info__wrapper -t-animate">
                 <div class="map__info">
                   <div class="map__info__number">{!! $map['map_info_1']['number'] !!}</div>
                   <div class="map__info__descr">{!! $map['map_info_1']['description'] !!}</div>

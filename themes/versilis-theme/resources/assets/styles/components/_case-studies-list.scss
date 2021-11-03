@@ -53,6 +53,8 @@
   }
 
   .project-info {
+    margin-right: rem-calc(20px);
+
     &__wrapper {
       display: flex;
       flex-direction: row;
@@ -66,10 +68,6 @@
 
     span {
       font-size: 16px;
-    }
-
-    a {
-      margin-left: rem-calc(16px);
     }
   }
 

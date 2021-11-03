@@ -3,8 +3,8 @@
     <div class="o-container">
       <div class="row">
         <div class="col-12">
-          <div class="home-header__content">
-            <div class="row">
+          <div class="home-header__content -t-animate">
+            <div class="row -t-animate">
               <div class="col-11 col-md-6 col-lg-4">
         
                 <h1>
@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <div class="home-header__right">
+      <div class="home-header__right -t-animate">
         <div class="home-header__img-wrapper">
           @if($page_header->background->type=="image" && !empty($page_header->background->responsive_image['format_desktop']))
             @if ( !empty($page_header->background->responsive_image['format_mobile']) )

@@ -97,7 +97,7 @@ add_action('widgets_init', function () {
     ] + $config);
 
     $config_footer = [
-        'before_widget' => '<div class="col"><div class="o-wrapper --pb-md">',
+        'before_widget' => '<div class="col-12 col-md-6 col-lg-3"><div class="o-wrapper --pb-sm">',
         'after_widget'  => '</div></div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',

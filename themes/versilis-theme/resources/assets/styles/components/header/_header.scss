@@ -65,12 +65,12 @@
     display: none;
 
     @include media-breakpoint-up(xl) {
-      font-weight: 500;
+      font-weight: bold;
       display: block;
       font-size: rem-calc(16px);
       border: 2px solid $color-secondary;
       background-color: $color-secondary;
-      color: $color-white;
+      color: $color-white !important;
 
       @include u-all-state {
         color: $color-white;

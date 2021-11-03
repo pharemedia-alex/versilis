@@ -8,6 +8,10 @@
   color: $color-primary;
   font-size: 16px;
 
+  .col .o-wrapper {
+    padding: 0 rem-calc(32px);
+  }
+
   p {
     font-size: 16px;
   }
@@ -47,6 +51,17 @@
       @include u-all-state {
         opacity: 0.6;
       }
+    }
+  }
+
+  .membership-logo {
+    font-family: $font-primary;
+    font-size: rem-calc(14px);
+    letter-spacing: 0.5px;
+
+    .o-wrapper {
+      text-align: center;
+      color: $color-blue-1;
     }
   }
 
@@ -98,6 +113,8 @@
 
   .social-media {
     a {
+      margin-right: rem-calc(10px);
+
       .icon__wrapper {
         background-color: $color-black;
         color: $color-white;

@@ -10,6 +10,7 @@ import common from './routes/common';
 import templateCaseStudies from './routes/case_studies';
 import templateContact from './routes/contact';
 import templateHomepage from './routes/home';
+import singleProduct from './routes/single_product';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -21,6 +22,8 @@ const routes = new Router({
   templateCaseStudies,
   //homepage
   templateHomepage,
+  //singleProduct
+  singleProduct,
 });
 
 // Load Events

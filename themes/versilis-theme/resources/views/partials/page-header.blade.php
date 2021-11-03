@@ -1,7 +1,7 @@
 @if($page_header->background->type=="image" && !empty($page_header->background->responsive_image['format_desktop']))
   <div class="page-header {!! $page_header->background->color !!} -img-bg">
     <div class="page-header__bg-img">
-      <div class="page-header__bg-img-filter">
+      <div class="page-header__bg-img-filter"></div>
       @if ( !empty($page_header->background->responsive_image['format_mobile']) )
       {{-- custom src set to display different images on mobile or desktop --}}
         <picture>

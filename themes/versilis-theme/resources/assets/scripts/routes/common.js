@@ -50,7 +50,7 @@ export default {
           //add delay
           effect: 'slide-up',
           once: true,
-          delay: 0.2,
+          delay: 0.3,
           config: {
               rootMargin: '0px -150px 0px 0px',
               threshold: 0,

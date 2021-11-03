@@ -108,9 +108,18 @@
     }
 
     &__link {
-      letter-spacing: 0.5px;
-      background: $color-white;
-      color: $color-black;
+      color: $color-primary;
+      background-color: $color-white;
+
+      &:hover,
+      &:active {
+        color: $color-white;
+        background-color: $color-blue-2;
+      }
+
+      &::before {
+        content: none;
+      }
     }
   }
 
