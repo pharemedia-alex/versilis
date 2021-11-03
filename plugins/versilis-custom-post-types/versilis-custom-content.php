@@ -29,6 +29,7 @@ define( 'WP_CPT_VERSION', '1.0.0' );
 
 require_once( dirname( __FILE__ ) . '/inc/cpt/cpt_case-study.php' );
 require_once( dirname( __FILE__ ) . '/inc/cpt/cpt_product.php' );
+require_once( dirname( __FILE__ ) . '/inc/cpt/cpt_document.php' );
 
 /**
  * Includes the files containing Custom Taxonomies code.
@@ -36,8 +37,9 @@ require_once( dirname( __FILE__ ) . '/inc/cpt/cpt_product.php' );
  * @uses require_once()
  */
 
-require_once( dirname( __FILE__ ) . '/inc/taxonomies/tax_applications.php' );
+require_once( dirname( __FILE__ ) . '/inc/taxonomies/tax_application.php' );
 require_once( dirname( __FILE__ ) . '/inc/taxonomies/tax_product-type.php' );
+require_once( dirname( __FILE__ ) . '/inc/taxonomies/tax_document-category.php' );
 
 /**
  * Includes the files containing Custom Options
