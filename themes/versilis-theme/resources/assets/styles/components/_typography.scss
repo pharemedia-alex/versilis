@@ -58,7 +58,7 @@
 }
 
 %small {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 h1,
@@ -126,6 +126,18 @@ small,
   margin-bottom: 8px;
 }
 
+.highlight-label {
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 32px;
+  border: 1px solid $color-secondary;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: $color-primary;
+  font-weight: 600;
+  margin-left: rem-calc(4px);
+}
+
 %checkmark-list {
   li {
     position: relative;
@@ -138,10 +150,10 @@ small,
     &::before {
       content: " ";
       display: block;
-      width: 0.4rem;
+      width: 0.45rem;
       height: 0.8rem;
-      border: solid $color-secondary;
-      border-width: 0 1px 1px 0;
+      border: solid $color-red-1;
+      border-width: 0 2px 2px 0;
       position: absolute;
       left: 5px;
       top: 8px;
@@ -149,6 +161,37 @@ small,
       -moz-transform: rotate(45deg);
       -o-transform: rotate(45deg);
       transform: rotate(45deg);
+    }
+  }
+}
+
+%chevron-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    list-style-type: none;
+    padding: 0.25rem 0 0 1.5rem;
+    font-size: rem-calc(16px);
+    line-height: 1.5;
+    margin-bottom: rem-calc(5px);
+
+    &::before {
+      content: "\00BB";
+      color: $color-secondary;
+      border: transparent;
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+      font-weight: 500;
+      left: 0;
+      position: absolute;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      top: 4px;
     }
   }
 }

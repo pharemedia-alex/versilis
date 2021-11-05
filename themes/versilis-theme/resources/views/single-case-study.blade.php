@@ -135,7 +135,9 @@
               
               <div class="col-12 col-lg-5 -t-animate">
                 <div class="tile">
-                  {!! $element->content !!}
+                  <div class="tile__content">
+                    {!! $element->content !!}
+                  </div>
                 </div>
               </div>
               

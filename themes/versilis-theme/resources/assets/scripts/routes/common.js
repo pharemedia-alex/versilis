@@ -34,6 +34,12 @@ export default {
         }
       };
     })();
+
+    // if user reload the page under the threshold
+    let currentScroll = window.pageYOffset;
+    if (currentScroll > 250) {
+      document.documentElement.classList.add('scrolling-down');
+    }
   },
   afterInit() {
 
@@ -62,22 +68,21 @@ export default {
     );
 
     this.mainMenu = new mainMenu('.header-init');
-    this.mainMenuScrollup = new mainMenu('.header-scrollup');
 
     if( document.querySelector('#cf-faq-accordion')!==null ) {
       this.toggle = new Accordion('#cf-faq-accordion', 'toggle-trigger', true);
     }
 
     if( document.querySelector('.case-studies-list')!==null ) {
-      let swiperWrapper = document.querySelector('.case-studies-slider__wrapper');
+      let swiperWrapper = document.querySelector('.case-studies-list .slider__wrapper');
       this.teamCarrousel = new Swiper(
-        swiperWrapper.querySelector('.swiper-container'),
+        swiperWrapper.querySelector('.case-studies-list .swiper-container'),
         {
             speed: 500,
             // ================== Navigation arrows ==================
             navigation: {
-              nextEl: '.case-studies-list-nav__next',
-              prevEl: '.case-studies-list-nav__prev',
+              nextEl: '.case-studies-list .nav__next',
+              prevEl: '.case-studies-list .nav__prev',
             },
             // breakpointsInverse: true,
             slidesPerView: 1,
@@ -97,7 +102,7 @@ export default {
               },
             },
             pagination: {
-              el: '.case-studies__swiper-pagination',
+              el: '.case-studies-list .swiper-pagination',
               clickable: true,
             },
             autoResize: true,

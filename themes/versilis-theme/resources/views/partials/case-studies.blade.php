@@ -1,7 +1,7 @@
 
 @if ( $case_studies->query->have_posts() )
 
-  <section class="case-studies-list">
+  <section class="case-studies-list u-overflow-hidden carrousel">
 
     <div class="case-studies__content-wrapper -t-animate">
       <div class="o-container --pt-xl --pb-xl">
@@ -19,11 +19,11 @@
             </a>
           </div>
           <div class="col">
-            <div class="case-studies-list-nav">
-              <div class="case-studies-list-nav__prev icon__wrapper size--lg">
+            <div class="swiper-nav">
+              <div class="nav__prev icon__wrapper size--lg">
                 @icon('chevron','nav-icon__prev icon--lg')
               </div>
-              <div class="case-studies-list-nav__next icon__wrapper size--lg">
+              <div class="nav__next icon__wrapper size--lg">
                 @icon('chevron','icon nav-icon icon--lg')
               </div>
             </div>
@@ -32,7 +32,7 @@
         <div class="row -t-animate">
           <div class="col-12 col-lg-11 offset-lg-1">
             <div class="o-wrapper --pt-md">
-              <div class="case-studies-slider__wrapper">
+              <div class="slider__wrapper">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
 
@@ -81,7 +81,7 @@
             </div>
           </div>
         </div>
-        <div class="case-studies__swiper-pagination u-mt-md"></div>
+        <div class="u-mt-sm swiper-pagination"></div>
       </div>
     </div>
   </section>

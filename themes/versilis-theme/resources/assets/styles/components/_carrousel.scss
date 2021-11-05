@@ -1,0 +1,71 @@
+// ==========================================================================
+// Components / carrousel
+//
+// ==========================================================================
+
+.carrousel {
+  .swiper-container {
+    overflow: visible;
+  }
+
+  .swiper-pagination {
+    position: relative;
+    width: 100%;
+    text-align: center;
+
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      margin: rem-calc(4px) rem-calc(6px);
+      opacity: 0.1;
+
+      &.swiper-pagination-bullet-active {
+        background-color: $color-black;
+        opacity: 1;
+      }
+    }
+  }
+
+  .swiper-nav {
+    text-align: right;
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+    }
+
+    div {
+      &:first-child {
+        margin-right: $spacing;
+      }
+
+      &.icon__wrapper {
+        background-color: $color-black;
+        border: 1px solid $color-black;
+
+        svg {
+          color: $color-white;
+        }
+
+        &.swiper-button-disabled {
+          background-color: transparent;
+          opacity: 0.6;
+
+          svg {
+            color: $color-black;
+          }
+        }
+      }
+
+      &:hover,
+      &:active {
+        &.icon__wrapper:not(.swiper-button-disabled) {
+          background-color: $color-blue-2;
+
+          svg {
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}

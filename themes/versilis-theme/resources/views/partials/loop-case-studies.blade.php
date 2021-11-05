@@ -9,14 +9,12 @@
       <div class="col-12 col-md-6 col-lg-4 case-study" dataid="{{ get_the_id() }}">
         <div class="tile u-mt-sm">
           <a href="{!! get_permalink() !!}" title="{!! $project_title . ' - ' . $project_location !!}">
-            <div class="tile__header">
-              <div class="tile__header-image">
-                @if ( has_post_thumbnail( ) )
-                  {!! get_the_post_thumbnail( ) !!}
-                @else
-                  {{-- prevoir placeholder --}}
-                @endif
-              </div>
+            <div class="tile__header --tall">
+              @if ( has_post_thumbnail( ) )
+                {!! get_the_post_thumbnail( ) !!}
+              @else
+                {{-- prevoir placeholder --}}
+              @endif
             </div>
             <div class="tile__content">
               <h3>{!! $project_title !!}</h3>

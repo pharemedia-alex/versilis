@@ -16,7 +16,7 @@ export default class mainMenu {
     this._elnav = this._elMenuContainer.querySelector('.nav-primary');
 
     this._elsMenuLinks = this._elnav.querySelectorAll('.menu-item');
-    this._elSubMenuWrapper = this._elMenuContainer.querySelector('.sub-menu-container');
+    this._elSubMenuWrapper = this._elMenuContainer.querySelector('.nav-primary');
 
     this.isActive = null;
     this._elActiveMenuItem = null;
@@ -44,10 +44,11 @@ export default class mainMenu {
       event.target.classList.add('is-hover');
       //get submenu class based on link parent ID
       let subMenuID = event.target.getAttribute('data-dropdown');
-      let _elSubMenu = this._elSubMenuWrapper.querySelector('.'+subMenuID);
+      console.log(subMenuID);
+      let _elSubMenu = this._elSubMenuWrapper.querySelector('#'+subMenuID);
       if ( _elSubMenu !== null && !_elSubMenu.classList.contains('is-active')) {
         _elSubMenu.classList.add('is-active');
-        this._elSubMenuWrapper.classList.add('is-active');
+        //this._elSubMenuWrapper.classList.add('is-active');
         this._elHeader.classList.add('inverted');
       }
       this.isActive = _elSubMenu;
@@ -56,7 +57,7 @@ export default class mainMenu {
       if (this._elActiveMenuItem !== null && this._elActiveMenuItem.classList.contains('is-hover')) {
           this._elActiveMenuItem.classList.remove('is-hover');
       }
-      this._elSubMenuWrapper.classList.remove('is-active');
+      //this._elSubMenuWrapper.classList.remove('is-active');
       if (this._elHeader.classList.contains('inverted')) {
           this._elHeader.classList.remove('inverted');
       }
@@ -71,7 +72,7 @@ export default class mainMenu {
     }
 
     _closeSubMenu() {
-      this._elSubMenuWrapper.classList.remove('is-active');
+      //this._elSubMenuWrapper.classList.remove('is-active');
       if (this._elHeader.classList.contains('inverted')) {
         this._elHeader.classList.remove('inverted');
       }

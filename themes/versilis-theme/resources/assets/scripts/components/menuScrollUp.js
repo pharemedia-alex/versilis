@@ -10,6 +10,7 @@ export default class MenuScrollUp {
     this._header = document.querySelector('.header');
     console.log(this._elMenuContainer);
     this._init();
+    console.log(window.pageYOffset);
   }
 
   _init() {

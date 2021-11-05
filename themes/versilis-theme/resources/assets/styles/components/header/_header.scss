@@ -4,8 +4,13 @@
 // ==========================================================================
 
 .header {
-  position: relative;
+  position: fixed;
   z-index: 50;
+  width: 100%;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  transition: transform $transition-slow $ease-out-expo;
+  background-color: $color-white;
 
   &__content {
     transform: none;
@@ -96,11 +101,11 @@
 
     .brand {
       #logo-white {
-        display: block;
+        display: none;
       }
 
       #logo-color {
-        display: none;
+        display: block;
       }
     }
 
@@ -288,21 +293,9 @@
 
 //scroll dependencies
 
-.scrolling-down,
-.scrolling-up {
+.scrolling-down {
   .header {
-    > .header__content {
-      transform: translate3d(0, -100%, 0);
-      //transition: transform $transition-fast $ease-out-expo;
-      //transition-delay: $transition-fast;
-    }
-  }
-}
-
-.scrolling-up {
-  .header-scrollup {
-    transform: translate3d(0, 0, 0);
-    transition-delay: $transition-fast;
+    transform: translate3d(0, -100%, 0);
   }
 }
 
@@ -311,8 +304,8 @@
 body.logged-in:not(.private-mode) {
   &.admin-bar {
     #mobile-menu,
-    .sub-menu-container,
-    .header-scrollup {
+    .header-scrollup,
+    .header {
       margin-top: 32px !important;
 
       @media screen and (max-width: 782px) {

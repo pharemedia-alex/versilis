@@ -77,17 +77,19 @@
             @foreach( $related_services as $service )
               <div class="col-12 col-md-6 col-xl-4 u-mb-sm">
                 <div class="tile --dark-bg">
-                  <h4 class="small-label">{!! $service['label'] !!}</h4>
-                  <h3 class="u-mb">{!! $service['title'] !!}</h3>
-                  <div class="related-service__content">
-                    {!! $service['text'] !!}
+                  <div class="tile__content">
+                    <h4 class="small-label">{!! $service['label'] !!}</h4>
+                    <h3 class="u-mb">{!! $service['title'] !!}</h3>
+                    <div class="related-service__content">
+                      {!! $service['text'] !!}
+                    </div>
+                    <a
+                      href="{!! $service['link']['url'] !!}"
+                      class="btn {!! !empty($button_classes) ? $button_classes : '' !!} --secondary-light u-mt-sm"
+                      title="{!! __('Learn more about', 'versilis-theme') !!} {!! $service['title'] !!}">
+                      {!! __('Learn more', 'versilis-theme') !!}
+                    </a>
                   </div>
-                  <a
-                    href="{!! $service['link']['url'] !!}"
-                    class="btn {!! !empty($button_classes) ? $button_classes : '' !!} --secondary-light u-mt-sm"
-                    title="{!! __('Learn more about', 'versilis-theme') !!} {!! $service['title'] !!}">
-                    {!! __('Learn more', 'versilis-theme') !!}
-                  </a>
                 </div>
               </div>
             @endforeach
@@ -102,23 +104,16 @@
       <section class="product__videos">
 
         <div class="product__videos__content">
-          <div class="product__videos__row justify-content-end">
-            <div class="product__videos__right-container">
-              <div class="product__videos__el-text">
-                <h2>{!! $videos['title'] !!}</h2>
-              </div>
-            </div>
-          </div>
-
-          <div class="product__videos__row">
+          <div class="product__videos__row align-items-center">
             <div class="product__videos__el-video -t-animate order-last order-lg-first">
               {!! responsive_video($videos['videos'][0]) !!}
             </div>
 
             <div class="product__videos__right-container">
               <div class="product__videos__el-text">
-                <div class="o-wrapper --pt-sm --pb-lg">
+                <div class="o-wrapper --pt-sm --pb-md">
                   <div class="o-content">
+                    <h2>{!! $videos['title'] !!}</h2>
                     {!! $videos['text'] !!}
                   </div>
                 </div>
@@ -138,20 +133,20 @@
       @endif
 
       @if ( !empty($applications['elements']) )
-      <section class="project__applications">
+      <section class="project__applications carrousel u-overflow-hidden">
 
         <div class="project__applications__content-wrapper -t-animate">
           <div class="o-container --pt-xl --pb-xl">
-            <div class="row -t-animate justify-content-center">
+            <div class="row -t-animate align-items-end">
               <div class="col-12 col-lg-6">        
-                <h2 class="u-mb">{!! $applications['title'] !!}</h2>
+                <h2>{!! $applications['title'] !!}</h2>
               </div>
               <div class="col-12 col-lg-6">        
-                <div class="project__applications-nav">
-                  <div class="project__applications-nav__prev icon__wrapper size--lg">
+                <div class="swiper-nav u-mt">
+                  <div class="nav__prev icon__wrapper size--lg">
                     @icon('chevron','nav-icon__prev icon--lg')
                   </div>
-                  <div class="project__applications-nav__next icon__wrapper size--lg">
+                  <div class="nav__next icon__wrapper size--lg">
                     @icon('chevron','icon nav-icon icon--lg')
                   </div>
                 </div>
@@ -159,8 +154,8 @@
             </div>
             <div class="row -t-animate">
               <div class="col-12">
-                <div class="o-wrapper --pt-md">
-                  <div class="project__applications-slider__wrapper">
+                <div class="o-wrapper --pt-md --pb-sm">
+                  <div class="slider__wrapper">
                     <div class="swiper-container">
                       <div class="swiper-wrapper">
     
@@ -168,14 +163,16 @@
     
                           <div class="swiper-slide" data-index="{{ $key }}">
                             <div class="tile --grey-bg">
-                              <h3 class="u-mb">{!! $application->name !!}</h3>
-                              <p class="u-mb">{!! $application->description !!}</p>
-                              <a
-                                href="{!! get_permalink(get_field('case_studies_page', 'option')) . '?application=' . $application->term_id !!}"
-                                class="btn {!! !empty($button_classes) ? $button_classes : '' !!} --secondary"
-                                title="">
-                                {!! __('See related case studies', 'versilis-theme') !!}
-                              </a>
+                              <div class="tile__content">
+                                <h3 class="u-mb">{!! $application->name !!}</h3>
+                                <p class="u-mb">{!! $application->description !!}</p>
+                                <a
+                                  href="{!! get_permalink(get_field('case_studies_page', 'option')) . '?application=' . $application->term_id !!}"
+                                  class="btn {!! !empty($button_classes) ? $button_classes : '' !!} --secondary"
+                                  title="">
+                                  {!! __('See related case studies', 'versilis-theme') !!}
+                                </a>
+                              </div>
                             </div>
                           </div>
     
@@ -187,7 +184,7 @@
                 </div>
               </div>
             </div>
-            <div class="project__applications__swiper-pagination u-mt-md"></div>
+            <div class="swiper-pagination u-mt-sm"></div>
           </div>
         </div>
       </section>

@@ -41,22 +41,9 @@
   }
 
   .tile {
-    padding: 0;
     height: auto;
 
     &__header {
-      position: relative;
-      padding-bottom: 70%;
-      height: 0;
-      overflow: hidden;
-    }
-
-    &__header-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
       transform: scale(1);
       transition: all $transition-slow $ease-out-expo;
 

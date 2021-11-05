@@ -123,10 +123,6 @@
     }
   }
 
-  .products {
-    min-height: 600px;
-  }
-
   .highlight {
     position: relative;
     background-color: $color-primary;
@@ -160,30 +156,6 @@
       width: 100%;
       height: 46px;
       background: url("../images/hatched_border.png") repeat-x;
-    }
-
-    &__content-wrapper {
-      overflow: hidden;
-    }
-
-    .swiper-container {
-      overflow: visible;
-    }
-
-    .innovation-list__swiper-pagination {
-      text-align: center;
-
-      .swiper-pagination-bullet {
-        width: 10px;
-        height: 10px;
-        margin: rem-calc(4px) rem-calc(6px);
-        opacity: 0.1;
-
-        &.swiper-pagination-bullet-active {
-          background-color: $color-black;
-          opacity: 1;
-        }
-      }
     }
 
     .innovation-element {
@@ -242,41 +214,6 @@
 
       a {
         margin-left: rem-calc(16px);
-      }
-    }
-
-    .innovation-list-nav {
-      display: none;
-      width: 100%;
-      text-align: right;
-
-      @include media-breakpoint-up(lg) {
-        display: block;
-      }
-
-      div {
-        &:first-child {
-          margin-right: $spacing;
-        }
-
-        &.icon__wrapper {
-          background-color: $color-black;
-          border-color: $color-black;
-
-          svg {
-            color: $color-white;
-          }
-        }
-
-        @include u-all-state {
-          &.icon__wrapper:not(.swiper-button-disabled) {
-            background-color: $color-white;
-
-            svg {
-              color: $color-black;
-            }
-          }
-        }
       }
     }
   }
@@ -452,6 +389,19 @@
           height: 120%;
           background-size: contain;
         }
+      }
+    }
+  }
+
+  .products {
+    .product-list-title {
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    ul {
+      li {
+        font-weight: 700;
       }
     }
   }

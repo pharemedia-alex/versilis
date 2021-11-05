@@ -10,8 +10,68 @@
 
     {{-- Products --}}
 
-    <section class="products">
+    <section class="products u-overflow-hidden carrousel">
       
+      <div class="products__content-wrapper -t-animate">
+        <div class="o-container --pt-xl --pb-xl">
+          <div class="row -t-animate justify-content-center">
+            <div class="col-12 col-lg-6">        
+              <h2 class="u-mb">{!! get_field('products_title') !!}</h2>
+            </div>
+            <div class="col-12 col-lg-6">        
+              <div class="swiper-nav">
+                <div class="nav__prev icon__wrapper size--lg">
+                  @icon('chevron','nav-icon__prev icon--lg')
+                </div>
+                <div class="nav__next icon__wrapper size--lg">
+                  @icon('chevron','icon nav-icon icon--lg')
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row -t-animate">
+            <div class="col-12">
+              <div class="o-wrapper --pt-md">
+                <div class="slider__wrapper">
+                  <div class="swiper-container">
+                    <div class="swiper-wrapper">
+  
+                      @foreach ($product_types as $type)
+  
+                        <div class="swiper-slide">
+                          <div class="tile">
+                            <div class="tile__image">
+                              {!! wp_get_attachment_image( $type['cover'], 'layout_img' ) !!}
+                            </div>
+                            <div class="tile__content">
+                              <h3 class="u-mb">{!! $type['title'] !!}</h3>
+                              <p class="small u-mb">{!! $type['description'] !!}</p>
+                              <strong>{!! __('Products :', 'versilis-theme') !!}</strong>
+                              <ul class="secondary-list">
+                                @foreach( $type['products'] as $product )
+                                <li>
+                                  <a href="{!! $product['link'] !!}" title="{!! $product['name'] !!}">{!! $product['name'] !!}</a>
+                                  @if( $product['label'] )
+                                    <div class="highlight-label">{!! __('Crashworthy', 'versilis-theme') !!}</div>
+                                  @endif
+                                </li>
+                                @endforeach
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+  
+                      @endforeach
+  
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination u-mt-md"></div>
+        </div>
+      </div>
     </section>
     
     {{-- Highlight --}}
@@ -42,7 +102,7 @@
 
     {{-- Innovation --}}
 
-    <section class="innovation">
+    <section class="innovation carrousel u-overflow-hidden">
 
       <div class="innovation__content-wrapper -t-animate">
         <div class="o-container --pt-xl --pb-xl">
@@ -62,11 +122,11 @@
               </a>
             </div>
             <div class="col">
-              <div class="innovation-list-nav">
-                <div class="innovation-list-nav__prev icon__wrapper size--lg">
+              <div class="swiper-nav">
+                <div class="nav__prev icon__wrapper size--lg">
                   @icon('chevron','nav-icon__prev icon--lg')
                 </div>
-                <div class="innovation-list-nav__next icon__wrapper size--lg">
+                <div class="nav__next icon__wrapper size--lg">
                   @icon('chevron','icon nav-icon icon--lg')
                 </div>
               </div>
@@ -75,7 +135,7 @@
           <div class="row -t-animate">
             <div class="col-12 col-lg-11 offset-lg-1">
               <div class="o-wrapper --pt-md --pb-sm">
-                <div class="innovation-list-slider__wrapper">
+                <div class="slider__wrapper">
                   <div class="swiper-container">
                     <div class="swiper-wrapper">
   
@@ -110,7 +170,7 @@
               </div>
             </div>
           </div>
-          <div class="innovation-list__swiper-pagination"></div>
+          <div class="swiper-pagination u-mt-sm"></div>
         </div>
       </div>
       

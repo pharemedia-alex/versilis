@@ -61,23 +61,25 @@
             @foreach ( $distributors as $element)
               <div class="col-12 col-lg-6 col-xl-4 u-mb-sm">
                 <div class="tile --dark">
-                  <h3>{!! $element['location'] !!}</h3>
-                  <div class="distributor__address">
-                    <strong>{!! $element['name'] !!}</strong><br/>
-                    {!! $element['address'] !!}
-                  </div>
-                  <div class="distributor__contact-info u-mt">
-                    <div class="distributor__name">
-                      @icon('user','icon')
-                      <span>{!! $element['contact_name'] !!}</span>
+                  <div class="tile__content">
+                    <h3>{!! $element['location'] !!}</h3>
+                    <div class="distributor__address">
+                      <strong>{!! $element['name'] !!}</strong><br/>
+                      {!! $element['address'] !!}
                     </div>
-                    <div class="distributor__phone">
-                      @icon('phone','icon')
-                      <span>{!! $element['phone'] !!}</span>
-                    </div>
-                    <div class="distributor__email">
-                      @icon('email','icon')
-                      <span>{!! $element['email'] !!}</span>
+                    <div class="distributor__contact-info u-mt">
+                      <div class="distributor__name">
+                        @icon('user','icon')
+                        <span>{!! $element['contact_name'] !!}</span>
+                      </div>
+                      <div class="distributor__phone">
+                        @icon('phone','icon')
+                        <span>{!! $element['phone'] !!}</span>
+                      </div>
+                      <div class="distributor__email">
+                        @icon('email','icon')
+                        <span>{!! $element['email'] !!}</span>
+                      </div>
                     </div>
                   </div>
                 </div>

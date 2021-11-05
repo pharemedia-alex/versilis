@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use Sober\Controller\Controller;
+use WP_Query;
 
 class TemplateHomepage extends Controller
 {
@@ -22,6 +23,51 @@ class TemplateHomepage extends Controller
     );
 
     return (object) $header_content;
+  }
+
+  public function product_types(){
+    $output = array();
+
+    $product_types = $this->acf_fields->product_types;
+    
+    foreach ( $product_types as $type ) {
+      $args = array(
+        'post_type' => 'product',
+        'tax_query' => array(
+            array(
+            'taxonomy' => 'product-type',
+            'field' => 'term_id',
+            'terms' => $type->term_id
+             )
+          )
+        );
+
+      $products = new WP_Query( $args );
+
+      $tax_products = array();
+      if ( !empty($products->posts) ) {
+        foreach( $products->posts as $product ) {
+          array_push( $tax_products, array(
+            'id'    => $product->ID,
+            'name'  => $product->post_title,
+            'link'  => get_permalink($product->ID),
+            'label' => get_field('crashworthy', $product->ID)
+            )
+          );
+        }
+
+        array_push( $output,
+          array(
+            'cover' => get_field('cover_image', 'term_' . $type->term_id),
+            'title' => $type->name,
+            'description' => $type->description,
+            'products' => $tax_products,
+          )
+        );
+      }
+    }  
+
+    return $output;
   }
 
   public function map() {

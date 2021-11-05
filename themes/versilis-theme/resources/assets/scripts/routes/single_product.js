@@ -14,15 +14,15 @@ export default {
     }
 
     if ( document.querySelector('.project__applications')!==null ) {
-      let swiperWrapper = document.querySelector('.project__applications-slider__wrapper');
+      let swiperWrapper = document.querySelector('.project__applications .slider__wrapper');
       this.teamCarrousel = new Swiper(
-        swiperWrapper.querySelector('.swiper-container'),
+        swiperWrapper.querySelector('.project__applications .swiper-container'),
         {
             speed: 500,
             // ================== Navigation arrows ==================
             navigation: {
-              nextEl: '.project__applications-nav__next',
-              prevEl: '.project__applications-nav__prev',
+              nextEl: '.project__applications .nav__next',
+              prevEl: '.project__applications .nav__prev',
             },
             // breakpointsInverse: true,
             slidesPerView: 1,
@@ -42,7 +42,7 @@ export default {
               },
             },
             pagination: {
-              el: '.project__applications__swiper-pagination',
+              el: '.project__applications .swiper-pagination',
               clickable: true,
             },
             autoResize: true,

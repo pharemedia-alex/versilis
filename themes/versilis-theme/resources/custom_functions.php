@@ -325,3 +325,26 @@ function custom_pagination( $max, $current, $url='') {
         )
     );
 }
+
+//populate dropdown menu - theme options for highlight in main menu
+function acf_load_menu_item_choices( $field ) {
+    
+    // reset choices
+    $field['choices'] = array();
+    $locations = get_nav_menu_locations();
+    $menu = wp_get_nav_menu_object( $locations['primary_navigation'] );
+
+    $menu_items = wp_get_nav_menu_items($menu->term_id);
+
+    foreach( $menu_items as $key => $menu_item ) {
+        if ( !$menu_item->menu_item_parent ) {
+            $field['choices'][ $menu_item->ID ] = $menu_item->title;
+        }
+    }
+
+    // return the field
+    return $field;
+    
+}
+
+add_filter('acf/load_field/key=field_61842ef99a4d3', 'acf_load_menu_item_choices');

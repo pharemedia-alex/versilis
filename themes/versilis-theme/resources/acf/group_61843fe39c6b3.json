@@ -1,0 +1,405 @@
+{
+    "key": "group_61843fe39c6b3",
+    "title": "Mega menu",
+    "fields": [
+        {
+            "key": "field_61844087dc545",
+            "label": "Sections",
+            "name": "sections",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add section",
+            "sub_fields": [
+                {
+                    "key": "field_61852d637e283",
+                    "label": "Type",
+                    "name": "section_type",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "link": "link",
+                        "text": "text"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "link",
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_61852d917e284",
+                    "label": "Link",
+                    "name": "section_link",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_61852d637e283",
+                                "operator": "==",
+                                "value": "link"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_61852db37e285",
+                    "label": "Title",
+                    "name": "section_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_61852d637e283",
+                                "operator": "==",
+                                "value": "text"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_61852df57e286",
+                    "label": "Mega menu elements",
+                    "name": "section_elements",
+                    "type": "flexible_content",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_61852d637e283",
+                                "operator": "==",
+                                "value": "text"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layouts": {
+                        "layout_61852e0dee55f": {
+                            "key": "layout_61852e0dee55f",
+                            "name": "intro",
+                            "label": "Intro",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_61852eda225ee",
+                                    "label": "intro",
+                                    "name": "intro",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": 0,
+                                    "new_lines": "br"
+                                }
+                            ],
+                            "min": "0",
+                            "max": "1"
+                        },
+                        "layout_61852f0e225ef": {
+                            "key": "layout_61852f0e225ef",
+                            "name": "links_list",
+                            "label": "Links list",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_61852f0e225f0",
+                                    "label": "Title",
+                                    "name": "links_list_title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_61852f5c225f1",
+                                    "label": "Links",
+                                    "name": "links_list_elements",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "",
+                                    "min": 0,
+                                    "max": 0,
+                                    "layout": "",
+                                    "button_label": "",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_61852f6a225f2",
+                                            "label": "Link",
+                                            "name": "submenu_links_element",
+                                            "type": "post_object",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "post_type": [
+                                                "page",
+                                                "product",
+                                                "case-study"
+                                            ],
+                                            "taxonomy": "",
+                                            "allow_null": 0,
+                                            "multiple": 0,
+                                            "return_format": "",
+                                            "ui": 1
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "0",
+                            "max": "20"
+                        },
+                        "layout_61852f99225f3": {
+                            "key": "layout_61852f99225f3",
+                            "name": "link_description",
+                            "label": "Link with description",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_61852f99225f5",
+                                    "label": "Description",
+                                    "name": "link_description",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": 0,
+                                    "new_lines": ""
+                                },
+                                {
+                                    "key": "field_61852f99225f4",
+                                    "label": "Title",
+                                    "name": "link_title",
+                                    "type": "text",
+                                    "instructions": "use to overide link title",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_61852fc8225f7",
+                                    "label": "Link",
+                                    "name": "link_element",
+                                    "type": "post_object",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [
+                                        "page",
+                                        "product",
+                                        "case-study"
+                                    ],
+                                    "taxonomy": "",
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "return_format": "",
+                                    "ui": 1
+                                }
+                            ],
+                            "min": "0",
+                            "max": "20"
+                        },
+                        "layout_61853027225f8": {
+                            "key": "layout_61853027225f8",
+                            "name": "highlight",
+                            "label": "Highlight",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_61853027225f9",
+                                    "label": "Image",
+                                    "name": "highlight_image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_61853027225fa",
+                                    "label": "Title",
+                                    "name": "highlight_title",
+                                    "type": "text",
+                                    "instructions": "use to overide link title",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_61853027225fb",
+                                    "label": "Link",
+                                    "name": "highlight_link",
+                                    "type": "post_object",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [
+                                        "page",
+                                        "product",
+                                        "case-study"
+                                    ],
+                                    "taxonomy": "",
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "return_format": "id",
+                                    "ui": 1
+                                }
+                            ],
+                            "min": "0",
+                            "max": "1"
+                        }
+                    },
+                    "button_label": "Add element",
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-mega-menu"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1636124373
+}

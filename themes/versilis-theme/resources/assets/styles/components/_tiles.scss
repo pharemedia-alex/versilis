@@ -12,7 +12,6 @@
   overflow: hidden; //define max height?
   border-radius: 24px;
   box-shadow: 0 1px 4px rgba(14, 31, 53, 0.12), 0 4px 8px rgba(14, 31, 53, 0.08);
-  padding: rem-calc(32px);
   background-color: $color-white;
   height: 100%;
   box-sizing: border-box;
@@ -35,16 +34,27 @@
   */
 
   &__image {
-    background-color: $color-secondary;
-    width: 200px;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 65%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
 
+    &[class*="--tall"] {
+      padding-top: 70%;
+    }
+
     img {
-      max-width: 200px;
-      max-height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
   }
 
@@ -61,11 +71,15 @@
 
   &__content {
     flex: 1;
-    padding: 1.5rem 2rem;
+    padding: rem-calc(32px);
   }
 
   ul {
     @extend %checkmark-list;
+  }
+
+  ul.secondary-list {
+    @extend %chevron-list;
   }
 
   &[class*="--grey-bg"] {
